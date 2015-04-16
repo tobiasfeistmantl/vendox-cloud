@@ -4,9 +4,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+  	<%= f.input :name %>
+    <%= f.input :email, autofocus: true %>
+    <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
     <%= f.input :password_confirmation, required: true %>
+    <%= f.input :street %>
+    <%= f.input :zip_code %>
+    <%= f.input :locality %>
   </div>
 
   <div class="form-actions">
