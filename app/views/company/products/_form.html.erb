@@ -1,0 +1,7 @@
+<%= simple_form_for [@company, @product] do |f| %>
+	<%= f.input :name %>
+	<%= f.input :price_in_cent %>
+	<%= f.input :status, collection: Product::STATUSES %>
+
+	<%= f.button :submit %>
+<% end %>

@@ -1,0 +1,9 @@
+<h1><%= @product.name %></h1>
+
+<p>
+	<%= number_to_currency @product.price %><br>
+	<%= t("#{@product.status}") %>
+</p>
+
+<%= link_to t('edit'), edit_company_product_path(@company, @product) %><br>
+<%= link_to t('delete'), [@company, @product], method: :delete %>
