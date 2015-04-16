@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price_in_cent: 1
+  company_id: 
+  status: 1
+
+two:
+  name: MyString
+  price_in_cent: 1
+  company_id: 
+  status: 1
