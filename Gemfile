@@ -18,3 +18,4 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'simple_form'
 gem 'bootstrap-sass'
+gem 'geocoder'

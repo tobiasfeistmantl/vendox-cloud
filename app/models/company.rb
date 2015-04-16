@@ -3,5 +3,12 @@ class Company < ActiveRecord::Base
 	# :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-	validates_presence_of [:name, :email, :password, :street, :zip_code, :locality, :longitude, :latitude]
+	validates_presence_of [:name, :email, :password, :street, :zip_code, :locality]
+
+	geocoded_by :address
+	after_validation :geocode
+
+	def address
+		[street, zip_code, locality].compact.join(', ')
+	end
 end
