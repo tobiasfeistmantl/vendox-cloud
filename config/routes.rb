@@ -7,6 +7,14 @@ Rails.application.routes.draw do
     resources :products
   end
 
+  scope 'api' do
+    scope 'v1' do
+      resources :companies, module: "company/api", only: [:index, :show] do 
+        resources :products, only: [:index, :show]
+      end
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
