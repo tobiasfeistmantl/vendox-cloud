@@ -19,3 +19,4 @@ en:
   inactive: Inactive
   new: New
   new_model: "New %{model}"
+  logout: Logout
