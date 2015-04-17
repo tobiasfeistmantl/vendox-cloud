@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
 	def index
-		@products = Product.all
+		@q = Product.ransack
+		@products = @q.result.paginate(page: params[:page])
 	end
 end
