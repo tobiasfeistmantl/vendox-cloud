@@ -1,0 +1,25 @@
+<div class="product-wrapper col-md-12">
+	<div class="col-md-9">
+		<h2>
+			<%= product.name %>
+			<small>
+				<%= number_to_currency product.price %>
+			</small>
+		</h2>
+	</div>
+	<% if @user_location.present? %>
+		<div class="col-md-3 text-right">
+			<h2>
+				<%= product.distance_to(@user_location).round(2) %> km
+			</h2>
+		</div>
+	<% end %>
+	<div class="col-md-12">
+		<h4>
+			<%= link_to product.company.name, product.company %>
+			<small>
+				<%= product.company.address %>
+			</small>
+		</h4>
+	</div>
+</div>

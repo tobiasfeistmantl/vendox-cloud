@@ -2,6 +2,10 @@
 
 <h2><%= Product.model_name.human(count: @products.count) %></h2>
 
-<%= render 'company/products/table' %>
+<% @products.each do |product| %>
+	<%= render 'products/wrapper', product: product %>
+<% end %>
 
-<%= link_to t('new_model', model: Product.model_name.human), new_company_product_path(@company) %>
+<%#= render 'company/products/table' %>
+
+<%#= link_to t('new_model', model: Product.model_name.human), new_company_product_path(@company) %>

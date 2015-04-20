@@ -1,5 +1,9 @@
 <h1><%= t('resource_by_model', resource: Product.model_name.human(count: @products.count), model: @company.name) %></h1>
 
-<%= render 'table' %>
+<% @products.each do |product| %>
+	<%= render 'products/wrapper', product: product %>
+<% end %>
 
-<%= link_to t('new_model', model: Product.model_name.human), new_company_product_path(@company) %>
+<%#= render 'table' %>
+
+<%#= link_to t('new_model', model: Product.model_name.human), new_company_product_path(@company) %>
