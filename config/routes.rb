@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :companies
 
-  resources :products
+  resources :products, only: [:index]
   
   resources :companies, module: :company do
     resources :products

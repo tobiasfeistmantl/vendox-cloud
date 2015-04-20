@@ -6,6 +6,10 @@ group :development, :test do
 	gem 'spring'
 end
 
+group :production do
+	gem 'rails_12factor'
+end
+
 gem 'rails', '4.2.1'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'

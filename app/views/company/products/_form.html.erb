@@ -2,6 +2,7 @@
 	<%= f.input :name %>
 	<%= f.input :price_in_cent %>
 	<%= f.input :status, collection: Product::STATUSES %>
+	<%= f.input :product_picture %>
 
 	<%= f.button :submit %>
 <% end %>

@@ -1,5 +1,6 @@
 class Company::ProductsController < Company::Base
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
+	before_action :check_company_authorization!, except: [:index, :show]
 
 	def index
 		@products = @company.products
@@ -48,6 +49,6 @@ class Company::ProductsController < Company::Base
 	end
 
 	def product_params
-		params.require(:product).permit(:name, :price_in_cent, :status)
+		params.require(:product).permit(:name, :price_in_cent, :status, :product_picture)
 	end
 end

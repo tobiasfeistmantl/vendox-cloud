@@ -24,3 +24,4 @@ en:
   search: Search
   location: Location
   browse_through: "Browse through %{model}"
+  not_authorized: Not authorized

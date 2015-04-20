@@ -9,4 +9,13 @@ class Company::Base < ApplicationController
 		flash[:danger] = t('messages.not_found', model: Company.model_name.human)
 		redirect_back and return
 	end
+
+	def check_company_authorization!
+		if current_company == @company
+
+		else
+			flash[:danger] = t('not_authorized')
+			redirect_back and return
+		end
+	end
 end
