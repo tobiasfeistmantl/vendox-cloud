@@ -1,0 +1,7 @@
+<%= search_form_for @q do |f| %>
+	<%= f.input :name_cont, label: false %>
+	<div class="form-group">
+		<%= text_field_tag :location, nil, placeholder: t('location'), class: 'form-control' %>
+	</div>
+	<%= f.button :submit %>
+<% end %>

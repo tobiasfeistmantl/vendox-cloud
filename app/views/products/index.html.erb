@@ -1,29 +1,34 @@
-<div class="col-md-3 text-center">
-	<h2><%= t('search') %></h2>
-	<%= search_form_for @q do |f| %>
-		<%= f.input :name_cont %>
-		<%= text_field_tag :location %>
-		<%= f.button :submit %>
-	<% end %>
+<div class="col-md-3">
+	<h3><%= t('search') %></h3>
+	<%= render 'search_form' %>
 </div>
 <div class="col-md-9">
 	<% @products.each do |product| %>
 		<div class="product-wrapper col-md-12">
-			<div class="col-md-8">
-				<h1>
+			<div class="col-md-9">
+				<h2>
 					<%= product.name %>
 					<small>
 						<%= number_to_currency product.price %>
 					</small>
-				</h1>
+				</h2>
 			</div>
-			<div class="col-md-4 text-right">
-				<h1><%= product.company.distance_to("6134").round(2) %> km</h1>
-			</div>
+			<% if @user_location.present? %>
+				<div class="col-md-3 text-right">
+					<h2>
+						<%= product.distance_to(@user_location).round(2) %> km
+					</h2>
+				</div>
+			<% end %>
 			<div class="col-md-12">
-				<h3><%= product.company.name %></h3>
-				<%= product.company.address %>
+				<h4>
+					<%= link_to product.company.name, product.company %>
+					<small>
+						<%= product.company.address %>
+					</small>
+				</h4>
 			</div>
 		</div>
 	<% end %>
+	<%= will_paginate @products, renderer: BootstrapPagination::Rails %>
 </div>
