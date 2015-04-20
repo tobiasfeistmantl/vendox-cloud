@@ -49,6 +49,6 @@ class Company::ProductsController < Company::Base
 	end
 
 	def product_params
-		params.require(:product).permit(:name, :price_in_cent, :status, :product_picture)
+		params.require(:product).permit(:name, :price, :status, :product_picture)
 	end
 end

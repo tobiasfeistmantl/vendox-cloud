@@ -7,8 +7,17 @@ class Product < ActiveRecord::Base
 
 	belongs_to :company
 
+	validates_presence_of [:name, :price_in_cent, :product_picture]
+	validates :price, numericality: true
+
 	def price
-		price_in_cent / 100.00
+		if price_in_cent
+			price_in_cent / 100
+		end
+	end
+
+	def price=(amount)
+		self.price_in_cent = amount.to_i * 100
 	end
 
 	STATUSES = [:active, :inactive]
