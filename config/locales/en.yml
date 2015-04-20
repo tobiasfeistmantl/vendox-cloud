@@ -25,3 +25,4 @@ en:
   location: Location
   browse_through: "Browse through %{model}"
   not_authorized: Not authorized
+  all: All
