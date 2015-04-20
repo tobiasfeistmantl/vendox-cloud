@@ -21,3 +21,4 @@ en:
   new_model: "New %{model}"
   logout: Logout
   resource_by_model: "%{resource} by %{model}"
+  search: Search

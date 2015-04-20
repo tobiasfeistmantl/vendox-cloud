@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   devise_for :companies
+
+  resources :products
   
   resources :companies, module: :company do
     resources :products
