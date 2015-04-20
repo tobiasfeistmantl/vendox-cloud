@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
 
 	reverse_geocoded_by :latitude, :longitude
 
+	mount_uploader :product_picture, ProductPictureUploader
+
 	belongs_to :company
 
 	def price
