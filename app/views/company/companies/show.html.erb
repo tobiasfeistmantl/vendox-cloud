@@ -1,4 +1,9 @@
-<h1><%= @company.name %></h1>
+<h1>
+	<%= @company.name %>
+	<small>
+		<%= @company.address %>
+	</small>
+</h1>
 
 <h2><%= Product.model_name.human(count: @products.count) %></h2>
 

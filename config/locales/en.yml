@@ -22,7 +22,7 @@ en:
   logout: Logout
   resource_by_model: "%{resource} by %{model}"
   search: Search
-  location: Location
+  location_were_you_are: Location (were you are...)
   browse_through: "Browse through %{model}"
   not_authorized: Not authorized
   all: All
