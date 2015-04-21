@@ -1,4 +1,4 @@
-<div class="product-wrapper media col-md-12">
+<div class="product-wrapper media col-md-12 <%= 'inactive-product' if product.inactive? %>">
 	<div class="media-left media-middle">
 		<%= link_to [product.company, product] do %>
 			<%= image_tag product.product_picture, class: 'img-rounded' %>
@@ -11,7 +11,7 @@
 				<small>
 					<%= number_to_currency product.price %>
 					<% if current_company == product.company %>
-						| <%= link_to t('edit'), [:edit, product.company, product] %>
+						| <%= link_to t('edit'), [:edit, product.company, product] %> <%= "| #{t('inactive')}" if product.inactive? %>
 					<% end %>
 				</small>
 			</h2>

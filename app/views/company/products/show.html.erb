@@ -1,14 +1,25 @@
-<div class="text-center">
-	<h1><%= t('resource_by_model', resource: @product.name, model: link_to(@company.name, @company)).html_safe %></h1>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="col-md-4">
+			<%= image_tag @product.product_picture, width: '100%', class: 'img-thumbnail' %>
+		</div>
 
-	<%= image_tag @product.product_picture, height: '300px', class: "img-rounded" %>
+		<div class="col-md-8">
+			<h1>
+				<%= @product.name %>
+				<small>
+					<%= t('by_model', model: link_to(@company.name, @company)).html_safe %>
+				</small>
+			</h1>
 
-	<p>
-		<%= number_to_currency @product.price %><br>
-		<%#= t("#{@product.status}") %>
-		<%= @company.address %>
-	</p>
+			<p>
+				<%= number_to_currency @product.price %><br>
+				<%#= t("#{@product.status}") %>
+				<%= @company.address %>
+			</p>
 
-	<%#= link_to t('edit'), edit_company_product_path(@company, @product) %><br>
-	<%#= link_to t('delete'), [@company, @product], method: :delete %>
+			<%#= link_to t('edit'), edit_company_product_path(@company, @product) %><br>
+			<%#= link_to t('delete'), [@company, @product], method: :delete %>
+		</div>
+	</div>
 </div>

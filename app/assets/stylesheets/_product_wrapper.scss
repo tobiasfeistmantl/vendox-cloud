@@ -1,8 +1,13 @@
 .product-wrapper {
+	background-color: #fff;
 	padding: 10px 0;
 	
 	img {
 		max-height: 120px;
 		max-width: 120px;
 	}
+}
+
+.inactive-product {
+	opacity: .5;
 }

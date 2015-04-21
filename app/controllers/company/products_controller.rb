@@ -3,7 +3,11 @@ class Company::ProductsController < Company::Base
 	before_action :check_company_authorization!, except: [:index, :show]
 
 	def index
-		@products = @company.products
+		if @company == current_company
+			@products = @company.products
+		else
+			@products = @company.products.active
+		end
 	end
 
 	def new
@@ -42,7 +46,11 @@ class Company::ProductsController < Company::Base
 	private
 
 	def set_product
-		@product = @company.products.find(params[:id])
+		if @company == current_company
+			@product = @company.products.find(params[:id])
+		else
+			@product = @company.products.active.find(params[:id])
+		end
 	rescue ActiveRecord::RecordNotFound
 		flash[:danger] = t('messages.not_found', model: Product.model_name.human)
 		redirect_back and return

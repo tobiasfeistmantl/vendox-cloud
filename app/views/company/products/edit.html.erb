@@ -1,3 +1,12 @@
-<h1><%= t('edit_model', model: Product.model_name.human) %></h1>
-
-<%= render 'form' %>
+<div class="col-md-offset-3 col-md-6">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				<%= t('edit_model', model: Product.model_name.human) %>
+			</h3>
+		</div>
+		<div class="panel-body">
+			<%= render 'form' %>
+		</div>
+	</div>
+</div>

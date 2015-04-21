@@ -1,7 +1,7 @@
 <%= simple_form_for [@company, @product] do |f| %>
 	<%= f.input :name %>
 	<%= f.input :price %>
-	<%= f.input :status, collection: Product::STATUSES %>
+	<%= f.input :status, collection: Product::STATUSES, include_blank: false %>
 	<%= f.input :product_picture %>
 
 	<%= f.button :submit %>

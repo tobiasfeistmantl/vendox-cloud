@@ -1,4 +1,11 @@
+$body-bg: #FAFAFA;
+
 $navbar-height: 70px;
+
+$navbar-default-bg: rgba(255, 255, 255, .7);
+$navbar-default-color: #000;
+$navbar-default-link-color: #000;
+$navbar-default-link-hover-color: #7F7F7F;
 
 @import "*";
 @import "shared/*";
