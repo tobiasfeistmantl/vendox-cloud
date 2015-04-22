@@ -27,3 +27,4 @@ en:
   not_authorized: Not authorized
   all: All
   by_model: "by %{model}"
+  welcome_title: Search for Products from vendors near your location
