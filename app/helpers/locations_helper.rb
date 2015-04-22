@@ -1,4 +1,12 @@
 module LocationsHelper
+	def current_user_location
+		session[:user_location]
+	end
+
+	def current_user_location=(new_user_location)
+		session[:user_location] = new_user_location
+	end
+
 	private
 
 	def hash_for_maps(locations)

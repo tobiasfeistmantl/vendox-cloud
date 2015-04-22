@@ -1,15 +1,22 @@
-<h2>Log in</h2>
+<div class="col-md-offset-3 col-md-6">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<%= t('devise.templates.generic.login_as', model: resource.model_name.human) %>
+		</div>
+		<div class="panel-body">
+			<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				<div class="form-inputs">
+					<%= f.input :email, required: false, autofocus: true %>
+					<%= f.input :password, required: false %>
+					<%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+				</div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+				<div class="form-actions">
+					<%= f.button :submit, t("devise.templates.generic.login"), class: 'btn btn-primary' %>
+				</div>
+			<% end %>
+			<br>
+			<%= render "devise/shared/links" %>
+		</div>
+	</div>
+</div>

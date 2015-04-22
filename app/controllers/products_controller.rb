@@ -2,10 +2,12 @@ class ProductsController < ApplicationController
 	def index
 		@q = Product.ransack(params[:q])
 
-		@user_location = params[:location]
+		if params[:location].present?
+			session[:user_location] = params[:location]
+		end
 
-		if @user_location.present?
-			@products = @q.result.includes(:company).near(@user_location).paginate(page: params[:page])
+		if current_user_location.present?
+			@products = @q.result.includes(:company).near(current_user_location).paginate(page: params[:page])
 		else
 			@products = @q.result.includes(:company).all.paginate(page: params[:page])
 		end

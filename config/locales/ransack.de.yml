@@ -1,0 +1,8 @@
+de:
+  ransack:
+    search: "Suchen"
+    predicate: "predicate"
+    and: "und"
+    or: "oder"
+    any: "keine"
+    all: "alle"

@@ -13,17 +13,19 @@
 
 <%= render 'shared/navbar' %>
 
-<div class="container">
-	<% flash.each do |type, message| %>
-		<div class="alert alert-<%= type %>">
-			<%= message %>
-		</div>
-	<% end %>
-</div>
+<%= render 'shared/messages' %>
 
 <div class="container">
 	<%= yield %>
+
+	<div class="col-md-12 text-center">
+		<% if current_user_location %>
+			<%= t('your_current_location_is') %> <strong><%= current_user_location %></strong>
+		<% end %>
+	</div>
 </div>
+
+<%= console %>
 
 </body>
 </html>

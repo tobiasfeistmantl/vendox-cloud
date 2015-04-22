@@ -16,10 +16,10 @@
 				</small>
 			</h2>
 		</div>
-		<% if @user_location.present? %>
+		<% if current_user_location.present? %>
 			<div class="col-md-3 text-right">
 				<h2>
-					<%= product.distance_to(@user_location).round(2) %> km
+					<%= product.distance_to(current_user_location).round(2) %> km
 				</h2>
 			</div>
 		<% end %>

@@ -1,0 +1,33 @@
+de:
+  messages:
+    not_found: "%{model} nicht gefunden"
+    created: "%{model} erstellt"
+    updated: "%{model} aktualisiert"
+  edit: Bearbeiten
+  edit_model: "%{model} bearbeiten"
+  delete: Löschen
+  product:
+    name: Name
+    price: Preis
+    status: Status
+  activerecord:
+    models:
+      product:
+        one: Produkt
+        other: Produkte
+  active: Aktiv
+  inactive: Inaktiv
+  new: Neu
+  new_model: "Neues %{model}"
+  logout: Abmelden
+  resource_by_model: "%{resource} von %{model}"
+  search: Search
+  location_were_you_are: Standort (wo du gerade bist...)
+  browse_through: "%{model} durchsuchen"
+  not_authorized: Nicht authorisiert
+  all: Alle
+  by_model: "von %{model}"
+  welcome_title: Suche nach Produkten von Händlern in deiner Nähe
+  buy: Kaufen
+  your_current_location_is: "Dein derzeitiger Standort ist"
+  away: entfernt
