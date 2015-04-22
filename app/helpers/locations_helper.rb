@@ -3,6 +3,10 @@ module LocationsHelper
 		session[:user_location]
 	end
 
+	def current_user_location_coordinates
+		@current_user_location_coordinates ||= Geocoder.coordinates(current_user_location)
+	end
+
 	def current_user_location=(new_user_location)
 		session[:user_location] = new_user_location
 	end

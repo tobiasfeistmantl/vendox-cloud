@@ -7,6 +7,12 @@ de:
       mark: '*'
     error_notification:
       default_message: "Bitte überprüfe die Fehler unten:"
+    labels:
+      product:
+        name: Produktname
+        price: Preis
+        product_picture: Produktbild
+        status: Status
     placeholders:
       defaults:
-        name_cont: Produktnamen
+        name_cont: Produktname

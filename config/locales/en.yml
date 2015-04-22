@@ -12,6 +12,9 @@ en:
     status: Status
   activerecord:
     models:
+      company:
+        one: Company
+        other: Companies
       product:
         one: Product
         other: Products
