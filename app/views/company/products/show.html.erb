@@ -12,14 +12,21 @@
 				</small>
 			</h1>
 
+			<% if @product.order_link %>
+				<%= link_to t('buy'), @product.order_link, class: 'btn btn-primary', target: '_blank' %>
+			<% end %>
+
 			<p>
-				<%= number_to_currency @product.price %><br>
+				<h3><%= number_to_currency @product.price %></h3>
 				<%#= t("#{@product.status}") %>
 				<%= @company.address %>
 			</p>
 
-			<%#= link_to t('edit'), edit_company_product_path(@company, @product) %><br>
-			<%#= link_to t('delete'), [@company, @product], method: :delete %>
+			<div class="thumbnail" id="map" style="height: 400px"></div>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	buildMap(<%=raw @maps_hash.to_json %>, setZoom = true);
+</script>

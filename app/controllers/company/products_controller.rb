@@ -1,4 +1,6 @@
 class Company::ProductsController < Company::Base
+	include LocationsHelper
+
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
 	before_action :check_company_authorization!, except: [:index, :show]
 
@@ -26,6 +28,7 @@ class Company::ProductsController < Company::Base
 	end
 
 	def show
+		@maps_hash = hash_for_maps(@product.company)
 	end
 
 	def edit
