@@ -1,5 +1,6 @@
 class Company::ProductsController < Company::Base
 	include LocationsHelper
+	include CountHelper
 
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
 	before_action :check_company_authorization!, except: [:index, :show]
@@ -28,6 +29,8 @@ class Company::ProductsController < Company::Base
 	end
 
 	def show
+		count_user(@product)
+
 		@maps_hash = hash_for_maps(@product.company)
 	end
 

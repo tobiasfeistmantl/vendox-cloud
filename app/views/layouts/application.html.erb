@@ -33,7 +33,7 @@
     }
 
     function setPosition(position) {
-    	$.get("position?lng=" + position.coords.longitude + "&lat=" + position.coords.latitude, function(data, status) {
+    	$.get("/position?lng=" + position.coords.longitude + "&lat=" + position.coords.latitude, function(data, status) {
     		$('.current-location-wrapper').html(data)
     	})
     }

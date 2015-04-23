@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
 		session[:user_location] = address
 
-		render html: "#{t('your_current_location_is')} <strong>#{current_user_location}</strong>".html_safe
+		render text: "#{t('your_current_location_is')} <strong>#{current_user_location}</strong>".html_safe
 	end
 
 	def set_locale
