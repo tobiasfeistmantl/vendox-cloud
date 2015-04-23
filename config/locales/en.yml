@@ -30,7 +30,9 @@ en:
   not_authorized: Not authorized
   all: All
   by_model: "by %{model}"
-  welcome_title: Search for Products from vendors near your location
+  welcome_title: Search for products from vendors near your location
   buy: Buy
   your_current_location_is: "Your current location is"
   away: Away
+  search_for_something: Search for something
+  show_all: Show all products

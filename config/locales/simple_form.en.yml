@@ -12,7 +12,7 @@ en:
       default_message: "Please review the problems below:"
     placeholders:
       defaults:
-        name_cont: Product name
+        name_cont: Product name (anything in particular?)
     # Examples
     # labels:
     #   defaults:

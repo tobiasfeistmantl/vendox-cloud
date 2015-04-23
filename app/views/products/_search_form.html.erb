@@ -1,11 +1,17 @@
 <div class="panel panel-default">
 	<div class="panel-body">
 		<%= search_form_for @q do |f| %>
-			<%= f.input :name_cont, label: false %>
+			<%= f.input :name_cont, label: false, html: { class: 'product-name-field' } %>
 			<div class="form-group">
 				<%= text_field_tag :location, current_user_location, placeholder: t('location_were_you_are'), class: 'form-control current-location-field' %>
 			</div>
-			<%= f.button :submit %>
+			<%= f.button :submit, t('show_all'), class: 'search-button' %>
 		<% end %>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$('#q_name_cont').on('input', function() {
+		$('.search-button').prop('value', "<%= t('search_for_something') %>")
+	})
+</script>
