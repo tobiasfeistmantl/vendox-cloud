@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  get 'position' => 'application#set_user_position'
+  scope "(:locale)", locale: /en|de/ do
+    get 'position' => 'application#set_user_position'
 
-  devise_for :companies
+    devise_for :companies
 
-  resources :products, only: [:index]
+    resources :products, only: [:index]
 
-  resources :feedbacks, only: [:new, :create]
-  
-  resources :companies, module: :company do
-    resources :products
+    resources :feedbacks, only: [:new, :create]
+    
+    resources :companies, module: :company do
+      resources :products
+    end
   end
 
   scope 'api' do

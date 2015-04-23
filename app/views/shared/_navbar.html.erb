@@ -35,6 +35,13 @@
 					<li><%= link_to t('is_something_missing'), new_feedback_path %></li>
 				<% end %>
 				<li><%= link_to "Feedback", new_feedback_path %></li>
+				<li>
+					<% if I18n.locale == :de %>
+						<%= link_to "EN", root_path(locale: :en) %>
+					<% else %>
+						<%= link_to "DE", root_path(locale: :de) %>
+					<% end %>
+				</li>
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div>
