@@ -6,9 +6,9 @@ class Company::ProductsController < Company::Base
 
 	def index
 		if @company == current_company
-			@products = @company.products
+			@products = @company.products.paginate(page: params[:page])
 		else
-			@products = @company.products.active
+			@products = @company.products.active.paginate(page: params[:page])
 		end
 	end
 

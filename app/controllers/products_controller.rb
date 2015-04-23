@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 	def index
-		@q = Product.ransack(params[:q])
+		@q = Product.active.ransack(params[:q])
 
 		if params[:location].present?
 			session[:user_location] = params[:location]

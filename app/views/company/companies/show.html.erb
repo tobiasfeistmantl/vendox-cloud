@@ -7,8 +7,12 @@
 
 <h2><%= Product.model_name.human(count: @products.count) %></h2>
 
-<% @products.each do |product| %>
-	<%= render 'products/wrapper', product: product %>
+<% if @products.empty? %>
+	<%= t('currently_no_products_available') %>
+<% else %>
+	<% @products.each do |product| %>
+		<%= render 'products/wrapper', product: product %>
+	<% end %>
 <% end %>
 
 <%#= render 'company/products/table' %>
