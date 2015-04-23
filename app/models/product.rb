@@ -6,6 +6,7 @@ class Product < ActiveRecord::Base
 	mount_uploader :product_picture, ProductPictureUploader
 
 	belongs_to :company
+	belongs_to :category
 
 	validates_presence_of [:name, :price_in_cent, :product_picture]
 	validates :price, numericality: true

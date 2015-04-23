@@ -4,16 +4,17 @@
 			<%= image_tag @product.product_picture, width: '100%', class: 'img-thumbnail' %>
 		</div>
 
-		<div class="col-md-8">
+		<div class="col-md-8 text-center">
 			<h1>
 				<%= @product.name %>
 				<small>
 					<%= t('by_model', model: link_to(@company.name, @company)).html_safe %>
 					<% if current_user_location.present? %>
-						| <%= @product.distance_to(current_user_location).round(2) %> km <%= t('away') %>
+						<br><%= @product.distance_to(current_user_location).round(2) %> km <%= t('away') %>
 					<% end %>
 				</small>
 			</h1>
+			<span class="label label-default"><%= @product.category.name %></span>
 			<% if @product.description.present? %>
 				<p>
 					<%= @product.description %>
