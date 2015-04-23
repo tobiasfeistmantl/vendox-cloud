@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
+  get 'position' => 'application#set_user_position'
+
   devise_for :companies
 
   resources :products, only: [:index]

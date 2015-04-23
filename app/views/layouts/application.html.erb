@@ -18,12 +18,28 @@
 <div class="container">
 	<%= yield %>
 
-	<div class="col-md-12 text-center">
+	<div class="col-md-12 text-center current-location-wrapper">
 		<% if current_user_location %>
 			<%= t('your_current_location_is') %> <strong><%= current_user_location %></strong>
 		<% end %>
 	</div>
 </div>
+
+<% unless current_user_location %>
+
+<script type="text/javascript">
+	if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(setPosition);
+    }
+
+    function setPosition(position) {
+    	$.get("position?lng=" + position.coords.longitude + "&lat=" + position.coords.latitude, function(data, status) {
+    		$('.current-location-wrapper').html(data)
+    	})
+    }
+</script>
+
+<% end %>
 
 <% if Rails.env.development? %>
 	<%= console %>
