@@ -24,3 +24,6 @@ de:
         email: Deine E-Mail Adresse
         subject: z.B. Produkt fehlt
         description: Eine ausführlichere Beschreibung
+    prompts:
+      defaults:
+        category_name_cont: Kategorie (Keine Zeit für falsche Produkte)

@@ -17,6 +17,9 @@ en:
         email: Your mail address
         subject: eg. missing product
         description: A more detailed description
+    prompts:
+      defaults:
+        category_name_cont: Category (No time for false products)
     # Examples
     # labels:
     #   defaults:

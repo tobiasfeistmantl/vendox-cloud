@@ -2,6 +2,7 @@
 	<div class="panel-body">
 		<%= search_form_for @q do |f| %>
 			<%= f.input :name_cont, label: false, html: { class: 'product-name-field' } %>
+			<%= f.input :category_id_eq, collection: Category.all, label: false, prompt: t('simple_form.prompts.defaults.category_name_cont') %>
 			<div class="form-group">
 				<%= text_field_tag :location, current_user_location, placeholder: t('location_were_you_are'), class: 'form-control current-location-field' %>
 			</div>

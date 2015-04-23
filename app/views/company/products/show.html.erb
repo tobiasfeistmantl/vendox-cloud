@@ -14,13 +14,14 @@
 					<% end %>
 				</small>
 			</h1>
-			<span class="label label-default"><%= @product.category.name %></span>
 			<% if @product.description.present? %>
 				<p>
 					<%= @product.description %>
 				</p>
 			<% end %>
-
+			<% if @product.category %>
+				<span class="label label-default"><%= @product.category.name %></span>
+			<% end %>
 			<% if @product.order_link %>
 				<%= link_to t('buy'), @product.order_link, class: 'btn btn-primary', target: '_blank' %>
 			<% end %>

@@ -16,6 +16,10 @@
 					<% end %>
 				</small>
 			</h2>
+
+			<% if product.category && params[:q][:category_id_eq].blank? %>
+				<span class="label label-default"><%= product.category.name %></span>
+			<% end %>
 		</div>
 		<% if current_user_location.present? %>
 			<div class="col-md-3 text-right">
