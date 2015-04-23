@@ -11,6 +11,7 @@
 				<small>
 					<%= number_to_currency product.price %>
 					<% if current_company == product.company %>
+						| <%= t('x_times_visited', count: product.count) %>
 						| <%= link_to t('edit'), [:edit, product.company, product] %> <%= "| #{t('inactive')}" if product.inactive? %>
 					<% end %>
 				</small>
