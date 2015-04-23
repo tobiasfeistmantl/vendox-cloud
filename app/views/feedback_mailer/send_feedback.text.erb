@@ -1,0 +1,13 @@
+Feedback von <%= @user_email %>!
+
+Beschreibung:
+
+<%= @description %>
+
+<% if @location %>
+	Gesendet von Standort:
+
+	<%= @location %>
+<% end %>
+
+IP-Adresse: @remote_ip

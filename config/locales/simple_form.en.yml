@@ -13,6 +13,10 @@ en:
     placeholders:
       defaults:
         name_cont: Product name (anything in particular?)
+      feedback:
+        email: Your mail address
+        subject: eg. missing product
+        description: A more detailed description
     # Examples
     # labels:
     #   defaults:

@@ -31,6 +31,10 @@
 					<li><%= link_to current_company.name, current_company %></li>
 					<li><%= link_to t('logout'), destroy_company_session_path, method: :delete %></li>
 				<% end %>
+				<% unless company_signed_in? %>
+					<li><%= link_to t('is_something_missing'), new_feedback_path %></li>
+				<% end %>
+				<li><%= link_to "Feedback", new_feedback_path %></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div>

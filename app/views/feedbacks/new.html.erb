@@ -1,0 +1,10 @@
+<h1><%= t('do_you_have_a_problem') %></h1>
+
+<h3><%= t('than_write_us') %></h3>
+
+<%= simple_form_for :feedback, url: feedbacks_path do |f| %>
+	<%= f.input :email %>
+	<%= f.input :subject %>
+	<%= f.input :description, as: :text %>
+	<%= f.button :submit, t('help_to_improve') %>
+<% end %>

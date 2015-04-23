@@ -13,6 +13,14 @@ de:
         price: Preis
         product_picture: Produktbild
         status: Status
+      feedback:
+        email: E-Mail Adresse
+        subject: Betreff
+        description: Beschreibung
     placeholders:
       defaults:
         name_cont: Produktname (etwas bestimmtes?)
+      feedback:
+        email: Deine E-Mail Adresse
+        subject: z.B. Produkt fehlt
+        description: Eine ausführlichere Beschreibung

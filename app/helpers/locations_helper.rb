@@ -1,10 +1,18 @@
 module LocationsHelper
 	def current_user_location
-		session[:user_location]
+		if company_signed_in?
+			current_company.address
+		else
+			session[:user_location]
+		end
 	end
 
 	def current_user_location_coordinates
-		@current_user_location_coordinates ||= Geocoder.coordinates(current_user_location)
+		if company_signed_in?
+			[current_company.latitude, current_company.longitude]
+		else
+			@current_user_location_coordinates ||= Geocoder.coordinates(current_user_location)
+		end
 	end
 
 	def current_user_location=(new_user_location)

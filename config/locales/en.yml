@@ -3,6 +3,7 @@ en:
     not_found: "%{model} not found"
     created: "%{model} created"
     updated: "%{model} updated"
+    thank_you_for_your_feedback: Thank you for your feedback
   edit: Edit
   edit_model: "Edit %{model}"
   delete: Delete
@@ -36,3 +37,7 @@ en:
   away: Away
   search_for_something: Search for something
   show_all: Show all products
+  help_to_improve: Help to improve
+  do_you_have_a_problem: "Do you have a problem, or is a product missing?"
+  than_write_us: Than write us and help us to improve Vendox.
+  is_something_missing: Is something missing?

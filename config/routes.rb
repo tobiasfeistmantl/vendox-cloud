@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   devise_for :companies
 
   resources :products, only: [:index]
+
+  resources :feedbacks, only: [:new, :create]
   
   resources :companies, module: :company do
     resources :products
