@@ -1,7 +1,7 @@
 <div class="product-wrapper media col-md-12 <%= 'inactive-product' if product.inactive? %>">
 	<div class="media-left media-middle">
 		<%= link_to [product.company, product] do %>
-			<%= image_tag product.product_picture, class: 'img-rounded' %>
+			<%= image_tag product.product_picture.thumb %>
 		<% end %>
 	</div>
 	<div class="media-body">
