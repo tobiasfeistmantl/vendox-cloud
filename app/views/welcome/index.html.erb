@@ -4,4 +4,14 @@
 	<div class="col-md-offset-4 col-md-4">
 		<%= render 'products/search_form' %>
 	</div>
+
+	<div class="col-md-offset-2 col-md-8">
+		<h2><%= t('companies_who_presenting') %></h2>
+		
+		<div class="thumbnail" id="map" style="height: 500px"></div>
+	</div>
 </div>
+
+<script type="text/javascript">
+	buildMap(<%=raw @maps_hash.to_json %>);
+</script>
