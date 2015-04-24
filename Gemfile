@@ -31,3 +31,4 @@ gem 'carrierwave'
 gem 'fog'
 gem 'gmaps4rails'
 gem 'puma'
+gem "validate_url"

@@ -13,6 +13,8 @@ de:
         price: Preis
         product_picture: Produktbild
         status: Status
+        category: Kategorie
+        order_link: Bestell-Link
       feedback:
         email: E-Mail Adresse
         subject: Betreff
@@ -24,6 +26,8 @@ de:
         email: Deine E-Mail Adresse
         subject: z.B. Produkt fehlt
         description: Eine ausführlichere Beschreibung
+      product:
+        order_link: z.B. http://vendox.net/products
     prompts:
       defaults:
         category_name_cont: Kategorie (Keine Zeit für falsche Produkte)

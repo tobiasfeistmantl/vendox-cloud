@@ -10,6 +10,7 @@ class Product < ActiveRecord::Base
 
 	validates_presence_of [:name, :price_in_cent, :product_picture]
 	validates :price, numericality: true
+	validates :order_link, url: { allow_blank: true }
 
 	def price
 		if price_in_cent

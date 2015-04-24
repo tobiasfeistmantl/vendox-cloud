@@ -20,10 +20,10 @@
 				</p>
 			<% end %>
 			<% if @product.category %>
-				<span class="label label-default"><%= @product.category.name %></span>
+				<p><span class="label label-default"><%= @product.category.name %></span></p>
 			<% end %>
-			<% if @product.order_link %>
-				<%= link_to t('buy'), @product.order_link, class: 'btn btn-primary', target: '_blank' %>
+			<% if @product.order_link.present? %>
+				<%= link_to t('order'), @product.order_link, class: 'btn btn-primary', target: '_blank' %>
 			<% end %>
 
 			<p>

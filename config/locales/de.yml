@@ -15,10 +15,16 @@ de:
     models:
       company: Unternehmen
 
-      
+
       product:
         one: Produkt
         other: Produkte
+    errors:
+      models:
+        product:
+          attributes:
+            order_link:
+              url: keine gültige URL (http:// vergessen?)
   active: Aktiv
   inactive: Inaktiv
   new: Neu
@@ -44,3 +50,4 @@ de:
   currently_no_products_available: Derzeit sind keine Produkte vorhanden
   x_times_visited: "%{count}x besucht"
   site_description: Vendox ist ein standortbasierter Produktfinder. Suchst du ein spezielles Produkt, dann hilft dir Vendox dies in deiner Nähe zu finden.
+  order: Bestellen

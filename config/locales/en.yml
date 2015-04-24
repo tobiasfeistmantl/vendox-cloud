@@ -19,6 +19,12 @@ en:
       product:
         one: Product
         other: Products
+    errors:
+      models:
+        product:
+          attributes:
+            order_link:
+              url: is not a valid URL (Maybe http:// forgot?)
   active: Active
   inactive: Inactive
   new: New
@@ -44,3 +50,4 @@ en:
   currently_no_products_available: Currently no products available
   x_times_visited: "%{count} times visited"
   site_description: Vendox is a locationbased Productfinder. It will help you to find the searched product near your location.
+  order: Order
