@@ -43,3 +43,4 @@ en:
   is_something_missing: Is something missing?
   currently_no_products_available: Currently no products available
   x_times_visited: "%{count} times visited"
+  site_description: Vendox is a locationbased Productfinder. It will help you to find the searched product near your location.
