@@ -21,13 +21,6 @@
 				<span class="label label-default"><%= product.category.name %></span>
 			<% end %>
 		</div>
-		<% if current_user_location.present? %>
-			<div class="col-md-3 text-right">
-				<h2>
-					<%= product.distance_to(current_user_location).round(2) %> km
-				</h2>
-			</div>
-		<% end %>
 		<div class="col-md-12">
 			<h4>
 				<%= link_to product.company.name, product.company %>

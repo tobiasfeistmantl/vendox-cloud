@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 		end
 
 		if current_user_location.present?
-			@products = @q.result.includes(:company).near(current_user_location).paginate(page: params[:page]).includes(:category)
+			@products = @q.result.includes(:company).near(current_user_location_coordinates).paginate(page: params[:page]).includes(:category)
 		else
 			@products = @q.result.includes(:company).all.paginate(page: params[:page]).includes(:category)
 		end
