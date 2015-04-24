@@ -9,12 +9,13 @@ class ApplicationController < ActionController::Base
 	before_action :set_locale
 
 	def set_user_position
-		latitude = params[:lat]
 		longitude = params[:lng]
-
-		address = Geocoder.address([latitude, longitude])
+		latitude = params[:lat]
+		address = params[:addr]
 
 		session[:user_location] = address
+		session[:user_lng] = longitude
+		session[:user_lat] = latitude
 
 		render text: "#{t('your_current_location_is')} <strong>#{current_user_location}</strong>".html_safe
 	end

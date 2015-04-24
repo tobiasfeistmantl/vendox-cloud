@@ -11,7 +11,7 @@ module LocationsHelper
 		if company_signed_in?
 			[current_company.latitude, current_company.longitude]
 		else
-			@current_user_location_coordinates ||= Geocoder.coordinates(current_user_location)
+			@current_user_location_coordinates ||= [session[:user_lat], session[:user_lng]]
 		end
 	end
 
