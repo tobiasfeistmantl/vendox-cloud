@@ -44,6 +44,10 @@
     		if (status == google.maps.GeocoderStatus.OK) {
     			$.get("/position?lng=" + position.coords.longitude + "&lat=" + position.coords.latitude + "&addr=" + results[0].formatted_address, function(data, status) {
 		    		$('.current-location-wrapper').html(data)
+
+		    		if($('.current-location-field').length) {
+		    			$('.current-location-field').val(results[0].formatted_address)
+		    		}
 		    	});
     		}
     	});
