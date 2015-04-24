@@ -1,0 +1,7 @@
+<div class="col-md-12 footer">
+	<div class="text-center current-location-wrapper">
+		<% if current_user_location %>
+			<%= t('your_current_location_is') %> <strong><%= current_user_location %></strong>
+		<% end %>
+	</div>
+</div>
