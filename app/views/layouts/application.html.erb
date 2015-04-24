@@ -25,12 +25,20 @@
 	<%= render 'shared/footer' %>
 </div>
 
-<% unless current_user_location %>
 
 <script type="text/javascript">
-	if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(setPosition);
-    }
+	<% unless current_user_location %>
+		$(function() {
+			autoLocation();
+		});
+	<% end %>
+
+
+	function autoLocation() {
+		if (navigator.geolocation) {
+	        navigator.geolocation.getCurrentPosition(setPosition);
+	    }
+	}
 
     function setPosition(position) {
     	// $.get("/position?lng=" + position.coords.longitude + "&lat=" + position.coords.latitude, function(data, status) {
@@ -43,7 +51,7 @@
     	geocoder.geocode({ location: latLng }, function(results, status) {
     		if (status == google.maps.GeocoderStatus.OK) {
     			$.get("/position?lng=" + position.coords.longitude + "&lat=" + position.coords.latitude + "&addr=" + results[0].formatted_address, function(data, status) {
-		    		$('.current-location-wrapper').html(data)
+		    		$('.current-location-info').html(data)
 
 		    		if($('.current-location-field').length) {
 		    			$('.current-location-field').val(results[0].formatted_address)
@@ -54,10 +62,9 @@
     }
 </script>
 
-<% end %>
 
 <% if Rails.env.development? %>
-	<%= console %>
+	<%#= console %>
 <% end %>
 
 </body>
