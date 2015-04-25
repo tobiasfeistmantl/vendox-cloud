@@ -1,5 +1,5 @@
-<div class="col-md-12 footer">
-	<div class="text-center current-location-wrapper">
+<div class="col-md-12 footer text-center">
+	<div class="current-location-wrapper">
 		<% if current_user_location %>
 			<span class="current-location-info">
 				<%= t('your_current_location_is') %>
@@ -10,4 +10,10 @@
 			| <%= link_to t('renew_location'), "#", class: 'user-location-renew-button' %>
 		<% end %>
 	</div>
+
+	<br>
+	
+	<%= link_to "https://www.facebook.com/pages/Vendox/1075011619182413" do %>
+		<%= image_tag "/logo/facebook-brand.png" %>
+	<% end %>
 </div>

@@ -1,8 +1,21 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.3";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="text-center">
 	<h1><%= t('welcome_title') %></h1>
 
 	<div class="col-md-offset-4 col-md-4">
 		<%= render 'products/search_form' %>
+	</div>
+
+	<div class="col-md-12">
+		<div class="fb-like" data-href="https://www.facebook.com/pages/Vendox/1075011619182413" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 	</div>
 
 	<div class="col-md-offset-2 col-md-8">
