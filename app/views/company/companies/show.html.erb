@@ -2,6 +2,9 @@
 	<%= @company.name %>
 	<small>
 		<%= @company.address %>
+		<% if current_user_location && @company != current_company %>
+			| <%= @company.distance_to(current_user_location).round(2) %> km <%= t('away') %>
+		<% end %>
 	</small>
 </h1>
 
