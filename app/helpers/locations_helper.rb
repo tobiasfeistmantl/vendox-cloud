@@ -19,6 +19,18 @@ module LocationsHelper
 		session[:user_location] = new_user_location
 	end
 
+	def current_user_location_expired?
+		if session[:last_location_update]
+			if session[:last_location_update].to_time < Time.now - 20.minutes
+				true
+			else
+				false
+			end
+		else
+			false
+		end
+	end
+
 	private
 
 	def hash_for_maps(locations)

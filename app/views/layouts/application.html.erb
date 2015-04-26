@@ -27,7 +27,7 @@
 
 
 <script type="text/javascript">
-	<% if not current_user_location && session[:last_location_update].to_time > Time.now - 30.minutes %>
+	<% if not current_user_location && !current_user_location_expired? %>
 		$(function() {
 			autoLocation();
 		});
