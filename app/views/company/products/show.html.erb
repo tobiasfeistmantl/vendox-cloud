@@ -28,7 +28,10 @@
 
 			<p>
 				<h3><%= number_to_currency @product.price %></h3>
-				<%= @company.address %>
+				<%= @company.address %><br>
+
+				<span class="glyphicon glyphicon-earphone"></span> <%= @company.phone_number %>&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-envelope"></span> <%= @company.email %>
 			</p>
 
 			<div class="thumbnail" id="map" style="height: 400px"></div>

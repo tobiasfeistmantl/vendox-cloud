@@ -7,6 +7,10 @@
 		<% end %>
 	</small>
 </h1>
+<h3>
+	<span class="glyphicon glyphicon-earphone"></span> <%= @company.phone_number %>&nbsp;&nbsp;&nbsp;
+	<span class="glyphicon glyphicon-envelope"></span> <%= @company.email %>
+</h3>
 
 <h2><%= Product.model_name.human(count: @products.count) %></h2>
 
