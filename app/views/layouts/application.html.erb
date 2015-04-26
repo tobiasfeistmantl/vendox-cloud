@@ -27,7 +27,7 @@
 
 
 <script type="text/javascript">
-	<% unless current_user_location %>
+	<% if not current_user_location && session[:last_location_update].to_time > Time.now - 30.minutes %>
 		$(function() {
 			autoLocation();
 		});
@@ -41,10 +41,6 @@
 	}
 
     function setPosition(position) {
-    	// $.get("/position?lng=" + position.coords.longitude + "&lat=" + position.coords.latitude, function(data, status) {
-    	// 	$('.current-location-wrapper').html(data)
-    	// });
-
     	geocoder = new google.maps.Geocoder();
     	latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 

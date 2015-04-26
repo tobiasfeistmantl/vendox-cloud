@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
 		session[:user_location] = address
 		session[:user_lng] = longitude
 		session[:user_lat] = latitude
+		session[:last_location_update] = Time.now
 
 		render text: "#{t('your_current_location_is')} <strong>#{current_user_location}</strong>".html_safe
 	end
