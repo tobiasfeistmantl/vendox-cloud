@@ -4,7 +4,7 @@ class Company::Base < ApplicationController
 	protected
 
 	def set_company
-		@company = Company.find(params[:company_id] || params[:id])
+		@company = Company.friendly.find(params[:company_id] || params[:id])
 	rescue ActiveRecord::RecordNotFound
 		flash[:danger] = t('messages.not_found', model: Company.model_name.human)
 		redirect_back and return

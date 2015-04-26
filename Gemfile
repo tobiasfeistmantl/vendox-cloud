@@ -33,3 +33,4 @@ gem 'gmaps4rails'
 gem 'puma'
 gem "validate_url"
 gem "mini_magick"
+gem 'friendly_id'

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :companies, module: :company do
       resources :products
     end
+
+    get ':id' => 'company/companies#show'
   end
 
   scope 'api' do

@@ -3,7 +3,12 @@ class Company < ActiveRecord::Base
 	# :lockable, :timeoutable and :omniauthable, :registerable
 	devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-	validates_presence_of [:name, :email, :password, :street, :zip_code, :locality]
+	validates_presence_of [:name, :email, :street, :zip_code, :locality]
+
+	validates :slug, uniqueness: true
+
+	extend FriendlyId
+	friendly_id :name, use: :slugged
 
 	geocoded_by :address
 	after_validation :geocode
