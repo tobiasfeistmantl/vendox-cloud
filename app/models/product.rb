@@ -14,12 +14,12 @@ class Product < ActiveRecord::Base
 
 	def price
 		if price_in_cent
-			price_in_cent / 100
+			price_in_cent / 100.0
 		end
 	end
 
 	def price=(amount)
-		self.price_in_cent = amount.to_i * 100
+		self.price_in_cent = amount.to_d * 100.0
 	end
 
 	STATUSES = [:active, :inactive]
