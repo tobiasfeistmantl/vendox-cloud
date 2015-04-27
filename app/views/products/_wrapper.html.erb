@@ -21,7 +21,7 @@
 				<span class="label label-default"><%= product.category.name %></span>
 			<% end %>
 		</div>
-		<% if defined?(distance) && distance == true %>
+		<% if defined?(distance) && distance == true && current_user_location %>
 			<div class="col-md-3 text-right">
 				<h2>
 					<%= product.distance.round(2) %> km

@@ -2,6 +2,16 @@
 	<div class="panel-body">
 		<div class="col-md-4">
 			<%= image_tag @product.product_picture, width: '100%', class: 'img-thumbnail' %>
+
+			<% if @product.description.present? %>
+				<h3>
+					<%= t('description') %>
+				</h3>
+
+				<p>
+					<%= h(@product.description).gsub(/\n/, '<br>').html_safe %>
+				</p>
+			<% end %>
 		</div>
 
 		<div class="col-md-8 text-center">
@@ -14,11 +24,6 @@
 					<% end %>
 				</small>
 			</h1>
-			<% if @product.description.present? %>
-				<p>
-					<%= @product.description %>
-				</p>
-			<% end %>
 			<% if @product.category %>
 				<p><span class="label label-default"><%= @product.category.name %></span></p>
 			<% end %>
