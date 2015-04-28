@@ -6,4 +6,7 @@ class WelcomeController < ApplicationController
 
 		@maps_hash = hash_for_maps(@companies)
 	end
+
+	def imprint
+	end
 end
