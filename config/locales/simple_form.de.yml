@@ -28,6 +28,8 @@ de:
         description: Eine ausführlichere Beschreibung
       product:
         order_link: z.B. http://vendox.net/products
+      message:
+        content: "Vorschläge, Wünsche, Anregungen,...?"
     prompts:
       defaults:
         category_name_cont: Kategorie (Keine Zeit für falsche Produkte)

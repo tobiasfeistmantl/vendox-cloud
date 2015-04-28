@@ -8,6 +8,8 @@ en:
     only_x_products_anymore:
       one: "Only one product allowed to publish anymore!"
       other: "Only %{count} products allowed to publish anymore!"
+    unable_to_save: Unable to save
+    not_in_shop: Not in this shop!
   edit: Edit
   edit_model: "Edit %{model}"
   delete: Delete
@@ -23,6 +25,9 @@ en:
       product:
         one: Product
         other: Products
+      message:
+        one: Message
+        other: Messages
     errors:
       models:
         product:
@@ -70,3 +75,7 @@ en:
   remaining_products_for_publishing: Remaining products for publishing
   private_information: Private information
   imprint: Imprint
+  you_are_in_this_shop: You are in this shop and you could therefore write a message. But please be serious.
+  created_ago: "Created %{time} ago"
+  no_messages_till_now: No messages till now. Go to this shop and be the first one who leaves a message!
+  go_to_this_shop_to_write_a_message: Go to this shop to write a message

@@ -19,6 +19,8 @@ en:
         description: A more detailed description
       product:
         order_link: eg. http://vendox.net/en/products
+      message:
+        content: "Suggestions, whishes,...?"
     prompts:
       defaults:
         category_name_cont: Category (No time for false products)

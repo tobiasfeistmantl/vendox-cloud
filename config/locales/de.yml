@@ -8,6 +8,8 @@ de:
     only_x_products_anymore:
       one: "Nur mehr ein Produkt zur Veröffentlichung erlaubt!"
       other: "Nur mehr %{count} Produkte zur Veröffentlichung erlaubt!"
+    unable_to_save: Speichern nicht möglich
+    not_in_shop: Nicht in dem Geschäft!
   edit: Bearbeiten
   edit_model: "%{model} bearbeiten"
   delete: Löschen
@@ -23,6 +25,9 @@ de:
       product:
         one: Produkt
         other: Produkte
+      message:
+        one: Nachricht
+        other: Nachrichten
     errors:
       models:
         product:
@@ -70,3 +75,7 @@ de:
   remaining_products_for_publishing: Verbleibende Produkte für Veröffentlichung
   private_information: Private Informationen
   imprint: Impressum
+  you_are_in_this_shop: Du bist in diesem Shop und kannst deshalb eine Nachricht hinterlassen. Aber bitte keinen Blödsinn.
+  created_ago: "Vor %{time} erstellt"
+  no_messages_till_now: Keine Nachrichten bis jetzt. Geh zu diesem Shop und sei der erste der eine Nachricht hinterlässt!
+  go_to_this_shop_to_write_a_message: Geh in diesen Shop um eine Nachricht zu hinterlassen.

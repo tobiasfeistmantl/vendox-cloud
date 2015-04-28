@@ -14,6 +14,7 @@ class Company < ActiveRecord::Base
 	after_validation :geocode
 
 	has_many :products
+	has_many :messages
 
 	def address
 		[street, zip_code, locality].compact.join(', ')
