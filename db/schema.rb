@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426195422) do
+ActiveRecord::Schema.define(version: 20150428063454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150426195422) do
     t.integer  "costs_per_product_in_cent"
     t.string   "phone_number"
     t.string   "slug"
+    t.integer  "remaining_products",        default: 10
   end
 
   add_index "companies", ["confirmation_token"], name: "index_companies_on_confirmation_token", unique: true, using: :btree

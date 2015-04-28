@@ -4,6 +4,10 @@ en:
     created: "%{model} created"
     updated: "%{model} updated"
     thank_you_for_your_feedback: Thank you for your feedback
+    product_limit_archived: "Product limit archived. To get more, please contact support@vendox.net!"
+    only_x_products_anymore:
+      one: "Only one product allowed to publish anymore!"
+      other: "Only %{count} products allowed to publish anymore!"
   edit: Edit
   edit_model: "Edit %{model}"
   delete: Delete
@@ -63,3 +67,5 @@ en:
     email_to: Basicly send an e-mail as business to
     we_will_add_you: and we will add you with pleasure!
   description: Description
+  remaining_products_for_publishing: Remaining products for publishing
+  private_information: Private information

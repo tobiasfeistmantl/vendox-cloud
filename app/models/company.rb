@@ -18,4 +18,24 @@ class Company < ActiveRecord::Base
 	def address
 		[street, zip_code, locality].compact.join(', ')
 	end
+
+	def product_publishing_remaining?
+		if remaining_products.nil? || remaining_products > 0
+			true
+		else
+			false
+		end
+	end
+
+	def decrease_product_counter(nr = 1)
+		if not remaining_products.nil?
+			if remaining_products >= nr
+				self.remaining_products -= nr
+			else
+				false
+			end
+		else
+			nil
+		end
+	end
 end

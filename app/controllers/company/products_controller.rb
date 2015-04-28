@@ -4,6 +4,7 @@ class Company::ProductsController < Company::Base
 
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
 	before_action :check_company_authorization!, except: [:index, :show]
+	before_action :check_if_product_limit_archived, only: [:new, :create]
 
 	def index
 		if @company == current_company
@@ -14,6 +15,12 @@ class Company::ProductsController < Company::Base
 	end
 
 	def new
+		unless @company.remaining_products.nil?
+			if @company.remaining_products <= 2
+				flash[:warning] = t('messages.only_x_products_anymore', count: @company.remaining_products)
+			end
+		end
+
 		@product = @company.products.new
 	end
 
@@ -21,6 +28,9 @@ class Company::ProductsController < Company::Base
 		@product = @company.products.new product_params
 
 		if @product.save
+			@company.decrease_product_counter
+			@company.save
+
 			flash[:success] = t('messages.created', model: Product.model_name.human)
 			redirect_to [@company, @product]
 		else
@@ -64,5 +74,12 @@ class Company::ProductsController < Company::Base
 
 	def product_params
 		params.require(:product).permit(:name, :price, :status, :description, :category_id, :order_link, :product_picture)
+	end
+
+	def check_if_product_limit_archived
+		unless @company.product_publishing_remaining?
+			flash[:danger] = t('messages.product_limit_archived')
+			redirect_back and return
+		end
 	end
 end

@@ -7,10 +7,23 @@
 		<% end %>
 	</small>
 </h1>
+
 <h3>
 	<span class="glyphicon glyphicon-earphone"></span> <%= @company.phone_number %>&nbsp;&nbsp;&nbsp;
 	<span class="glyphicon glyphicon-envelope"></span> <%= @company.email %>
 </h3>
+
+<% if current_company == @company && @company.remaining_products != nil %>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<h2><%= t('private_information') %></h2>
+
+			<p>
+				<%= t('remaining_products_for_publishing') %>: <%= @company.remaining_products %>
+			</p>
+		</div>
+	</div>
+<% end %>
 
 <h2><%= Product.model_name.human(count: @products.count) %></h2>
 
