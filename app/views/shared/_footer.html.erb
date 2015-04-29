@@ -7,7 +7,9 @@
 					<%= current_user_location %>
 				</strong>
 			</span>
-			| <%= link_to t('renew_location'), "#", class: 'user-location-renew-button' %>
+			<% unless company_signed_in? %>
+				| <%= link_to t('renew_location'), "#", class: 'user-location-renew-button' %>
+			<% end %>
 		<% end %>
 	</div>
 

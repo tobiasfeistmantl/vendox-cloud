@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
 	def index
 		@q = Product.active.ransack(params[:q])
 
-		if params[:location].present?
-			session[:user_location] = params[:location]
+		if params[:location].present? && params[:lng].present? && params[:lat].present?
+			set_current_user_location(params[:location], params[:lat], params[:lng])
 		end
 
 		if current_user_location.present?

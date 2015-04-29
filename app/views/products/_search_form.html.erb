@@ -3,16 +3,51 @@
 		<%= search_form_for @q do |f| %>
 			<%= f.input :name_cont, label: false, html: { class: 'product-name-field' } %>
 			<%= f.input :category_id_eq, collection: Category.all, label: false, prompt: t('simple_form.prompts.defaults.category_name_cont') %>
-			<div class="form-group">
+			<div class="form-group location-form-group">
 				<%= text_field_tag :location, current_user_location, placeholder: t('location_were_you_are'), class: 'form-control current-location-field' %>
+				<span id="helpBlock" class="help-block"><%= t('address_not_valid') %></span>
 			</div>
+
+			<%= hidden_field_tag :lng, "", id: 'longitude-field' %>
+			<%= hidden_field_tag :lat, "", id: 'latitude-field' %>
+
 			<%= f.button :submit, t('show_all'), class: 'search-button' %>
 		<% end %>
 	</div>
 </div>
 
 <script type="text/javascript">
+	var populatedLocation = $('.current-location-field').val();
+	var $form = $('#product_search');
+
 	$('#q_name_cont').on('input', function() {
-		$('.search-button').prop('value', "<%= t('search_for_something') %>")
+		$('.search-button').prop('value', "<%= t('search_for_something') %>");
 	})
+
+	$form.submit(function(e) {
+		var address = $('.current-location-field').val();
+
+		if (address !== populatedLocation) {
+			e.preventDefault();
+
+			var geocoder = new google.maps.Geocoder();
+
+			geocoder.geocode({ 'address': address }, function(results, status) {
+				if (status === google.maps.GeocoderStatus.OK) {
+					$('#longitude-field').val(results[0].geometry.location.lng());
+					$('#latitude-field').val(results[0].geometry.location.lat());
+					$('.current-location-field').val(results[0].formatted_address);
+
+					$form.off('submit');
+					$form.submit();
+				} else if (status === google.maps.GeocoderStatus.ZERO_RESULTS) {
+					$('.current-location-field').val(populatedLocation);
+					$('.location-form-group').addClass('has-error');
+					$('#helpBlock').slideDown();
+				}
+			});
+		} else {
+			return true
+		}
+	});
 </script>

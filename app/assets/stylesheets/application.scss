@@ -12,3 +12,7 @@ $navbar-default-link-hover-color: #7F7F7F;
 @import "shared/*";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#helpBlock {
+	display: none;
+}

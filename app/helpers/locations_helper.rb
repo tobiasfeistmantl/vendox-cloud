@@ -15,8 +15,14 @@ module LocationsHelper
 		end
 	end
 
-	def current_user_location=(new_user_location)
-		session[:user_location] = new_user_location
+	def set_current_user_location(address, lat, lng)
+		session[:user_location] = address
+		session[:user_lat] = lat
+		session[:user_lng] = lng
+
+		session[:last_location_update] = Time.now
+
+		session[:user_location]
 	end
 
 	def current_user_location_expired?
