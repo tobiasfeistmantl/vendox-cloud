@@ -37,6 +37,14 @@ module LocationsHelper
 		end
 	end
 
+	def auto_located?
+		if session[:auto_located]
+			true
+		else
+			false
+		end
+	end
+
 	private
 
 	def hash_for_maps(locations)

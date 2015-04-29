@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
 
 	def set_user_position
 		set_current_user_location(params[:addr], params[:lat], params[:lng])
+
+		if params[:a] == "true"
+			session[:auto_located] = true
+		end
 		
 		render text: "#{t('your_current_location_is')} <strong>#{current_user_location}</strong>".html_safe
 	end

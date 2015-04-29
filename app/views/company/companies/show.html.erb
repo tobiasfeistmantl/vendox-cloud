@@ -41,7 +41,7 @@
 	<h2><%= Message.model_name.human(count: @messages.count) %></h2>
 
 	<% unless company_signed_in? %>
-		<% if @distance_to_company && @distance_to_company < 0.5 %>
+		<% if @distance_to_company && @distance_to_company < 0.5 && auto_located? %>
 			<p><%= t('you_are_in_this_shop') %></p>
 
 			<%= simple_form_for [@company, @message] do |f| %>
@@ -51,6 +51,9 @@
 
 			<br>
 		<% else %>
+			<% if current_user_location && !auto_located? %>
+				<p>Mit einem selbst eingetragenen Standort kann keine Nachricht hinterlassen werden!</p>
+			<% end %>
 			<p><%= t('go_to_this_shop_to_write_a_message') %></p>
 		<% end %>
 	<% end %>
@@ -63,7 +66,3 @@
 		<%= t('no_messages_till_now') %>
 	<% end %>
 </div>
-
-<%#= render 'company/products/table' %>
-
-<%#= link_to t('new_model', model: Product.model_name.human), new_company_product_path(@company) %>
