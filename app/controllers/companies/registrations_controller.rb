@@ -12,8 +12,11 @@ class Companies::RegistrationsController < Devise::RegistrationsController
     if verify_recaptcha
       super
     else
-      flash[:danger] = t('messages.validation_of_recatcha_failed')
-      redirect_back
+      build_resource(sign_up_params)
+      clean_up_passwords(resource)
+      flash.now[:danger] = t('messages.validation_of_recatcha_failed')
+      flash.delete :recaptcha_error
+      render :new
     end
   end
 

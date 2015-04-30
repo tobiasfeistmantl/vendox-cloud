@@ -10,6 +10,7 @@ class FeedbacksController < ApplicationController
 			redirect_back
 		else
 			flash[:danger] = t('messages.validation_of_recatcha_failed')
+			flash.delete :recaptcha_error
 			redirect_back
 		end
 	end
