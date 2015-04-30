@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Vendox</title>
+	<% if content_for?(:title) %>
+		<title><%= yield(:title) %> | Vendox</title>
+	<% else %>
+		<title>Vendox</title>
+	<% end %>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
@@ -34,7 +38,7 @@
 <% end %>
 
 <% if Rails.env.development? %>
-	<%#= console %>
+	<%= console %>
 <% end %>
 
 </body>
