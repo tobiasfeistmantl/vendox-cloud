@@ -80,3 +80,4 @@ en:
   no_messages_till_now: No messages till now. Go to this shop and be the first one who leaves a message!
   go_to_this_shop_to_write_a_message: Go to this shop to write a message
   address_not_valid: Address not valid
+  validation_of_recatcha_failed: Validation of recaptcha failed

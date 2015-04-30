@@ -80,3 +80,4 @@ de:
   no_messages_till_now: Keine Nachrichten bis jetzt. Geh zu diesem Shop und sei der erste der eine Nachricht hinterlässt!
   go_to_this_shop_to_write_a_message: Geh in diesen Shop um eine Nachricht zu hinterlassen.
   address_not_valid: Adresse nicht korrekt
+  validation_of_recatcha_failed: Validierung des reCaptchas fehlgeschlagen
