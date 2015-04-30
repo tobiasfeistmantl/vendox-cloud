@@ -1,10 +1,13 @@
 class Company < ActiveRecord::Base
+	include ActiveModel::Validations
+
 	# Include default devise modules. Others available are:
 	# :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :confirmable, :registerable
 
 	validates_presence_of [:name, :email, :street, :zip_code, :locality, :vat_number, :longitude, :latitude, :phone_number]
 	validates_uniqueness_of [:name, :email, :phone_number, :slug, :vat_number]
+	validates_with CountryValidator
 
 	validates :vat_number, valvat: { lookup: true }
 
@@ -12,7 +15,7 @@ class Company < ActiveRecord::Base
 	friendly_id :name, use: :slugged
 
 	geocoded_by :address
-	before_validation :geocode
+	before_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
 	before_validation :normalize_vat_number
 
@@ -47,5 +50,11 @@ class Company < ActiveRecord::Base
 
 	def normalize_vat_number
 		self.vat_number = Valvat::Utils.normalize(vat_number)
+	end
+
+	def check_if_from_austria
+		if not Valvat::Utils.split(vat_number)[0] == "AT"
+			errors.add(:vat_number, "not from austria")
+		end
 	end
 end

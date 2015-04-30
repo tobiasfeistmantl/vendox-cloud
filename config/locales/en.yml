@@ -87,3 +87,5 @@ en:
   register: Register
   already_registered: Already registered?
   login: Login
+  errors:
+    not_from_austria: not from austria
