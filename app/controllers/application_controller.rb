@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 			session[:auto_located] = true
 		end
 		
-		render text: "#{t('your_current_location_is')} <strong>#{current_user_location}</strong>".html_safe
+		render text: "#{t('your_current_location_is')} #{current_user_location}"
 	end
 
 	def set_locale
