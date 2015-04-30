@@ -56,7 +56,7 @@ de:
   help_to_improve: Helfen die Seite zu verbessern
   do_you_have_a_problem: "Ein Problem, Anliegen oder fehlt ein Produkt?"
   than_write_us: Dann schreib uns und hilf Vendox zu verbessern.
-  is_something_missing: Fehlt etwas?
+  problems: Probleme?
   currently_no_products_available: Derzeit sind keine Produkte vorhanden
   x_times_visited: "%{count}x besucht"
   site_description: Vendox ist ein standortbasierter Produktfinder. Suchst du ein spezielles Produkt, dann hilft dir Vendox dies in deiner Nähe zu finden.
@@ -70,8 +70,9 @@ de:
     important_currently_free: Wichtig! Derzeit kostenlos!
     young_company: Vendox ist ein junges Unternehmen das derzeit den Produktstamm aufbaut.
     free: Lass dir die Möglichkeit nicht entgehen, deine Produkte jetzt bei Vendox kostenlos einzustellen!
-    email_to: Einfach als Handelsunternehmen eine E-Mail an
-    we_will_add_you: und wir werden dich gerne aufnehmen!
+    register: Einfach als Handelsunternehmen
+    start_selling: und verkaufen anfangen!
+    here: hier registrieren
   description: Beschreibung
   remaining_products_for_publishing: Verbleibende Produkte für Veröffentlichung
   private_information: Private Informationen
@@ -85,3 +86,4 @@ de:
   location_of_your_shop: Standort deines Shops
   register: Registrieren
   already_registered: Bereits registriert?
+  login: Anmelden

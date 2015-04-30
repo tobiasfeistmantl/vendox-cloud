@@ -21,6 +21,9 @@ en:
         order_link: eg. http://vendox.net/en/products
       message:
         content: "Suggestions, whishes,...?"
+      company:
+        name: eg. Example Inc.
+        vat_number: eg. ATU345789003
     prompts:
       defaults:
         category_name_cont: Category (No time for false products)

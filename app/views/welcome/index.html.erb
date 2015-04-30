@@ -35,11 +35,16 @@
 				</p>
 
 				<p>
-					<%= t('currently_free_box.email_to') %><br>
+					<%= t('currently_free_box.register') %><br>
 					<strong>
-						<%= link_to "aufnehmen@vendox.net", "mailto:aufnehmen@vendox.net" %>
+						<%= link_to t('currently_free_box.here'), new_company_registration_path %>
 					</strong><br>
-					<%= t('currently_free_box.we_will_add_you') %>
+					<%= t('currently_free_box.start_selling') %>
+				</p>
+
+				<p>
+					<strong><%= t('already_registered') %></strong><br>
+					<%= link_to t('login'), new_company_session_path %>
 				</p>
 			</div>
 		</div>
@@ -52,9 +57,9 @@
 	<div class="col-md-12">
 		<h2><%= t('not_listed') %></h2>
 		<h3>
-			<p><%= t('than_contact_us_on') %></p>
-			<p><%= link_to "aufnehmen@vendox.net", "mailto:aufnehmen@vendox.net" %></p>
-			<p><%= t('and_we_will_create_an_account') %></p>
+			<p><%= t('currently_free_box.register') %></p>
+			<p><%= link_to t('currently_free_box.here'), new_company_registration_path %></p>
+			<p><%= t('currently_free_box.start_selling') %></p>
 		</h3>
 
 	</div>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
     get 'imprint' => 'welcome#imprint'
 
-    devise_for :companies, controllers: { registrations: "companies/registrations" }
+    devise_for :companies, controllers: { registrations: "companies/registrations" }, path_names: { sign_up: "register" }
 
     resources :products, only: [:index]
 

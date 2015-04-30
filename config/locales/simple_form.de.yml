@@ -33,6 +33,9 @@ de:
     placeholders:
       defaults:
         name_cont: Produktname (etwas bestimmtes?)
+      company:
+        name: z.B. Beispiel GmbH
+        vat_number: z.B. ATU345789003
       feedback:
         email: Deine E-Mail Adresse
         subject: z.B. Produkt fehlt

@@ -56,7 +56,7 @@ en:
   help_to_improve: Help to improve
   do_you_have_a_problem: "Do you have a problem, or is a product missing?"
   than_write_us: Than write us and help us to improve Vendox.
-  is_something_missing: Is something missing?
+  problems: Problems?
   currently_no_products_available: Currently no products available
   x_times_visited: "%{count} times visited"
   site_description: Vendox is a locationbased Productfinder. It will help you to find the searched product near your location.
@@ -70,8 +70,9 @@ en:
     important_currently_free: Important! Currently free!
     young_company: Vendox is a young company who builds currently the stocklist up.
     free: "Don't miss the chance to add your products to vendox for free!"
-    email_to: Basicly send an e-mail as business to
-    we_will_add_you: and we will add you with pleasure!
+    register: Basicly register as business
+    start_selling: and start selling!
+    here: here
   description: Description
   remaining_products_for_publishing: Remaining products for publishing
   private_information: Private information
@@ -85,3 +86,4 @@ en:
   location_of_your_shop: Location of your shop
   register: Register
   already_registered: Already registered?
+  login: Login
