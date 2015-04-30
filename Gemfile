@@ -35,3 +35,4 @@ gem "validate_url"
 gem "mini_magick"
 gem 'friendly_id'
 gem "recaptcha", :require => "recaptcha/rails"
+gem 'valvat'

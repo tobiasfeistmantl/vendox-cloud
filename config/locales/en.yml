@@ -10,6 +10,7 @@ en:
       other: "Only %{count} products allowed to publish anymore!"
     unable_to_save: Unable to save
     not_in_shop: Not in this shop!
+    validation_of_recatcha_failed: Validation of recaptcha failed
   edit: Edit
   edit_model: "Edit %{model}"
   delete: Delete
@@ -80,4 +81,7 @@ en:
   no_messages_till_now: No messages till now. Go to this shop and be the first one who leaves a message!
   go_to_this_shop_to_write_a_message: Go to this shop to write a message
   address_not_valid: Address not valid
-  validation_of_recatcha_failed: Validation of recaptcha failed
+  company_information: Company information
+  location_of_your_shop: Location of your shop
+  register: Register
+  already_registered: Already registered?

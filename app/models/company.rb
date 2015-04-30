@@ -1,17 +1,20 @@
 class Company < ActiveRecord::Base
 	# Include default devise modules. Others available are:
-	# :lockable, :timeoutable and :omniauthable, :registerable
-	devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :confirmable
+	# :lockable, :timeoutable and :omniauthable
+	devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :confirmable, :registerable
 
-	validates_presence_of [:name, :email, :street, :zip_code, :locality]
+	validates_presence_of [:name, :email, :street, :zip_code, :locality, :vat_number, :longitude, :latitude, :phone_number]
+	validates_uniqueness_of [:name, :email, :phone_number, :slug, :vat_number]
 
-	validates :slug, uniqueness: true
+	validates :vat_number, valvat: { lookup: true }
 
 	extend FriendlyId
 	friendly_id :name, use: :slugged
 
 	geocoded_by :address
-	after_validation :geocode
+	before_validation :geocode
+
+	before_validation :normalize_vat_number
 
 	has_many :products
 	has_many :messages
@@ -38,5 +41,11 @@ class Company < ActiveRecord::Base
 		else
 			nil
 		end
+	end
+
+	protected
+
+	def normalize_vat_number
+		self.vat_number = Valvat::Utils.normalize(vat_number)
 	end
 end

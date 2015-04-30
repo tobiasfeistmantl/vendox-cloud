@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428121335) do
+ActiveRecord::Schema.define(version: 20150430101008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150428121335) do
     t.string   "phone_number"
     t.string   "slug"
     t.integer  "remaining_products",        default: 10
+    t.string   "vat_number"
   end
 
   add_index "companies", ["confirmation_token"], name: "index_companies_on_confirmation_token", unique: true, using: :btree
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150428121335) do
   add_index "companies", ["name"], name: "index_companies_on_name", using: :btree
   add_index "companies", ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true, using: :btree
   add_index "companies", ["slug"], name: "index_companies_on_slug", unique: true, using: :btree
+  add_index "companies", ["vat_number"], name: "index_companies_on_vat_number", unique: true, using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false

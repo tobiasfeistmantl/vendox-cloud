@@ -9,7 +9,7 @@ class FeedbacksController < ApplicationController
 			flash[:success] = t('messages.thank_you_for_your_feedback')
 			redirect_back
 		else
-			flash[:danger] = t('validation_of_recatcha_failed')
+			flash[:danger] = t('messages.validation_of_recatcha_failed')
 			redirect_back
 		end
 	end

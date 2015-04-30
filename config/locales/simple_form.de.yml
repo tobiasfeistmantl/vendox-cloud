@@ -8,6 +8,17 @@ de:
     error_notification:
       default_message: "Bitte überprüfe die Fehler unten:"
     labels:
+      defaults:
+        name: Firmenname
+        email: E-Mail Adresse
+        password: Passwort
+        password_confirmation: Passwortbestätigung
+      company:
+        vat_number: UID Nummer
+        street: Straße
+        zip_code: PLZ
+        locality: Ortschaft
+        phone_number: Telefonnummer
       product:
         name: Produktname
         price: Preis

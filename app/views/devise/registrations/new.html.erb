@@ -2,18 +2,52 @@
 	<h2><%= t('devise.templates.generic.register') %></h2>
 
 	<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-	  <%= f.error_notification %>
+		<%= f.error_notification %>
 
-	  <div class="form-inputs">
-	    <%= f.input :email, required: true, autofocus: true %>
-	    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
-	    <%= f.input :password_confirmation, required: true %>
-	  </div>
+		<div class="form-inputs">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><%= t('company_information') %></h3>
+				</div>
+				<div class="panel-body">
+					<%= f.input :name %>
+					<%= f.input :email, required: true, autofocus: true %>
+					<%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+					<%= f.input :password_confirmation, required: true %>
+					<%= f.input :phone_number %>
+					<%= f.input :vat_number %>
+				</div>
+			</div>
 
-	  <div class="form-actions">
-	    <%= f.button :submit, t('devise.templates.generic.register') %>
-	  </div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><%= t('location_of_your_shop') %></h3>
+				</div>
+				<div class="panel-body <%= "panel-danger" unless resource.longitude %>">
+					<%= f.input :street %>
+					<%= f.input :zip_code %>
+					<%= f.input :locality %>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-actions">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><%= t('register') %></h3>
+				</div>
+				<div class="panel-body">
+					<%= recaptcha_tags %>
+					<br>
+					<%= f.submit t('devise.templates.generic.register'), class: 'btn btn-primary' %>
+
+					<br>
+					<br>
+					
+					<strong><%= t('already_registered') %></strong><br>
+					<%= render "devise/shared/links" %>
+				</div>
+			</div>
+		</div>
 	<% end %>
-	<br>
-	<%= render "devise/shared/links" %>
 </div>
