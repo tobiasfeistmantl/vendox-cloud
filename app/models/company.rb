@@ -15,7 +15,7 @@ class Company < ActiveRecord::Base
 	friendly_id :name, use: :slugged
 
 	geocoded_by :address
-	before_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
+	before_validation :geocode, if: ->(obj){ obj.address.present? and obj.street_changed? }
 
 	before_validation :normalize_vat_number
 
