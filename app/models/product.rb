@@ -19,7 +19,7 @@ class Product < ActiveRecord::Base
 	end
 
 	def price=(amount)
-		self.price_in_cent = amount.to_d * 100.0
+		self.price_in_cent = amount.gsub(',', '.').to_d * 100.0
 	end
 
 	STATUSES = [:active, :inactive]
