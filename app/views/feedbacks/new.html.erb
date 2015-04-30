@@ -6,5 +6,6 @@
 	<%= f.input :email %>
 	<%= f.input :subject %>
 	<%= f.input :description, as: :text %>
+	<%= recaptcha_tags %>
 	<%= f.button :submit, t('help_to_improve') %>
 <% end %>
