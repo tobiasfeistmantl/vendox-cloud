@@ -9,7 +9,11 @@
 			<h2>
 				<%= link_to product.name, [product.company, product] %>
 				<small>
-					<%= number_to_currency product.price %>
+					<% if product.price_on_request %>
+						<%= t('price_on_request') %>
+					<% else %>
+						<%= number_to_currency product.price %>
+					<% end %>
 					<% if current_company == product.company %>
 						| <%= t('x_times_visited', count: product.count) %>
 						| <%= link_to t('edit'), [:edit, product.company, product] %> <%= "| #{t('inactive')}" if product.inactive? %>

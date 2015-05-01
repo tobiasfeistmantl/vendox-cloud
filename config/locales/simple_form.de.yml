@@ -26,6 +26,7 @@ de:
         status: Status
         category: Kategorie
         order_link: Bestell-Link
+        price_on_request: Preis auf Nachfrage
       feedback:
         email: E-Mail Adresse
         subject: Betreff

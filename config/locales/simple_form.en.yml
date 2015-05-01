@@ -19,6 +19,7 @@ en:
         description: A more detailed description
       product:
         order_link: eg. http://vendox.net/en/products
+        price_on_request: Price on request
       message:
         content: "Suggestions, whishes,...?"
       company:

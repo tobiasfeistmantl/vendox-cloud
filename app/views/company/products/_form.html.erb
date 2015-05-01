@@ -1,5 +1,6 @@
 <%= simple_form_for [@company, @product] do |f| %>
 	<%= f.input :name %>
+	<%= f.input :price_on_request %>
 	<%= f.input :price, required: true %>
 	<%= f.input :description %>
 	<%= f.input :status, collection: Product::STATUSES, include_blank: false, required: true %>
@@ -9,3 +10,22 @@
 
 	<%= f.button :submit %>
 <% end %>
+
+<script type="text/javascript">
+	var priceOnRequestBox = $('input[name="product[price_on_request]"]');
+	var priceField = $('input[name="product[price]"]');
+
+	priceOnRequestBox.change(checkIfPriceIsOnRequest);
+
+	function checkIfPriceIsOnRequest() {
+		if (priceOnRequestBox.is(':checked')) {
+			priceField.prop('disabled', true);
+		} else {
+			priceField.prop('disabled', false);
+		}
+	}
+
+	$(function() {
+		checkIfPriceIsOnRequest();
+	});
+</script>

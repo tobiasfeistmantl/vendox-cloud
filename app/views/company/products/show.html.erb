@@ -34,7 +34,13 @@
 			<% end %>
 
 			<p>
-				<h3><%= number_to_currency @product.price %></h3>
+				<h3>
+					<% if @product.price_on_request %>
+						<%= t('price_on_request') %>
+					<% else %>
+						<%= number_to_currency @product.price %>
+					<% end %>
+				</h3>
 				<%= @company.address %><br>
 
 				<span class="glyphicon glyphicon-earphone"></span> <%= @company.phone_number %>&nbsp;&nbsp;&nbsp;

@@ -73,7 +73,7 @@ class Company::ProductsController < Company::Base
 	end
 
 	def product_params
-		params.require(:product).permit(:name, :price, :status, :description, :category_id, :order_link, :product_picture)
+		params.require(:product).permit(:name, :price, :status, :description, :category_id, :order_link, :product_picture, :price_on_request)
 	end
 
 	def check_if_product_limit_archived
