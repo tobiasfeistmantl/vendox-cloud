@@ -32,7 +32,7 @@
 					<li><%= link_to t('logout'), destroy_company_session_path, method: :delete %></li>
 				<% end %>
 				<% unless company_signed_in? %>
-					<li><%= link_to t('problems'), new_feedback_path %></li>
+					<li><%= link_to t("navbar_feedback_text.text_#{rand(3)}"), new_feedback_path %></li>
 				<% end %>
 				<li><%= link_to "Feedback", new_feedback_path %></li>
 				<li>

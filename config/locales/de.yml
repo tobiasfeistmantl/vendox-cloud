@@ -56,7 +56,10 @@ de:
   help_to_improve: Helfen die Seite zu verbessern
   do_you_have_a_problem: "Ein Problem, Anliegen oder fehlt ein Produkt?"
   than_write_us: Dann schreib uns und hilf Vendox zu verbessern.
-  problems: Probleme?
+  navbar_feedback_text:
+    text_0: Probleme?
+    text_1: Anregungen?
+    text_2: Ideen?
   currently_no_products_available: Derzeit sind keine Produkte vorhanden
   x_times_visited: "%{count}x besucht"
   site_description: Vendox ist ein standortbasierter Produktfinder. Suchst du ein spezielles Produkt, dann hilft dir Vendox dies in deiner Nähe zu finden.
