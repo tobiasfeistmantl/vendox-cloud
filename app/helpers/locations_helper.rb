@@ -3,7 +3,7 @@ module LocationsHelper
 		if company_signed_in?
 			current_company.address
 		else
-			session[:user_location]
+			session[:user_location] || params[:addr]
 		end
 	end
 
@@ -11,7 +11,13 @@ module LocationsHelper
 		if company_signed_in?
 			[current_company.latitude, current_company.longitude]
 		else
-			@current_user_location_coordinates ||= [session[:user_lat], session[:user_lng]]
+			if session[:user_lat] && session[:user_lng]
+				[session[:user_lat], session[:user_lng]]
+			elsif params[:lat] && params[:lng]
+				[params[:lat], params[:lng]]
+			else
+				nil
+			end
 		end
 	end
 

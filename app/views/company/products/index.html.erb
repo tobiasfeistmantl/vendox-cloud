@@ -4,6 +4,6 @@
 	<%= t('currently_no_products_available') %>
 <% else %>
 	<% @products.each do |product| %>
-		<%= render 'products/wrapper', product: product %>
+		<%= render 'product/products/wrapper', product: product %>
 	<% end %>
 <% end %>

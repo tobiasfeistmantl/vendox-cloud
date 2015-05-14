@@ -1,4 +1,4 @@
-class Company::Api::CompaniesController < Company::Base
+class Api::V1::Company::CompaniesController < Company::Base
 	before_action :set_company, only: :show
 
 	def index

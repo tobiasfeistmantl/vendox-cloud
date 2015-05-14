@@ -3,12 +3,11 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|de/ do
     get 'position' => 'application#set_user_position'
-
     get 'imprint' => 'welcome#imprint'
 
     devise_for :companies, controllers: { registrations: "companies/registrations" }, path_names: { sign_up: "register" }
 
-    resources :products, only: [:index]
+    resources :products, module: :product, only: [:index]
 
     resources :feedbacks, only: [:new, :create]
     
@@ -22,9 +21,11 @@ Rails.application.routes.draw do
 
   scope 'api' do
     scope 'v1' do
-      resources :companies, module: "company/api", only: [:index, :show] do 
+      resources :companies, module: "api/v1/company", only: [:index, :show] do 
         resources :products, only: [:index, :show]
       end
+
+      resources :products, module: "api/v1/product", only: [:index]
     end
   end
 
