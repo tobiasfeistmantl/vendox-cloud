@@ -33,7 +33,7 @@ de:
         description: Beschreibung
     placeholders:
       defaults:
-        name_cont: Produktname (etwas bestimmtes?)
+        name_or_description_or_company_name_cont: Produktname, Beschreibung oder Firmenname
       company:
         name: z.B. Beispiel GmbH
         vat_number: z.B. ATU345789003

@@ -19,13 +19,13 @@ Rails.application.routes.draw do
     get ':id' => 'company/companies#show'
   end
 
-  scope 'api' do
-    scope 'v1' do
-      resources :companies, module: "api/v1/company", only: [:index, :show] do 
+  namespace 'api' do
+    namespace 'v1' do
+      resources :companies, module: :company, only: [:index, :show] do 
         resources :products, only: [:index, :show]
       end
 
-      resources :products, module: "api/v1/product", only: [:index]
+      resources :products, module: :product, only: [:index]
     end
   end
 
