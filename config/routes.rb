@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     get ':id' => 'company/companies#show'
   end
 
-  namespace 'api' do
+  namespace 'api', defaults: { format: :json } do
     namespace 'v1' do
       resources :companies, module: :company, only: [:index, :show] do 
         resources :products, only: [:index, :show]
