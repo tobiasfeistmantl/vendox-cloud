@@ -4,19 +4,16 @@ class Api::V1::Company::ProductsController < Company::Base
 	before_action :set_product, only: :show
 
 	def index
-		@products = @company.products
-
-		respond_with @products
+		@products = @company.products.active.includes(:category)
 	end
 
 	def show
-		respond_with @product
 	end
 
 	private
 
 	def set_product
-		@product = @company.products.find(params[:id])
+		@product = @company.products.active.includes(:category).find(params[:id])
 	rescue ActiveRecord::RecordNotFound
 		respond_with "Not Found", status: 404
 

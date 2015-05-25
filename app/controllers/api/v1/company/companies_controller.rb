@@ -9,18 +9,15 @@ class Api::V1::Company::CompaniesController < Company::Base
 		else
 			@companies = Company.all.paginate(page: params[:page])
 		end
-
-		respond_with @companies
 	end
 
 	def show
-		respond_with @company
 	end
 
 	private
 
 	def set_company
-		@company = Company.find(params[:id])
+		@company = Company.includes(:products).find(params[:id])
 	rescue ActiveRecord::RecordNotFound
 		respond_with "Not Found", status: 404
 

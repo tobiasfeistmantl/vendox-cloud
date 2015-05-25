@@ -13,8 +13,12 @@ class Product < ActiveRecord::Base
 	validates :order_link, url: { allow_blank: true }
 
 	def price
-		if price_in_cent
-			price_in_cent / 100.0
+		unless price_on_request
+			if price_in_cent
+				price_in_cent / 100.0
+			end
+		else
+			nil
 		end
 	end
 
