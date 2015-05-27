@@ -9,9 +9,9 @@ class Product::ProductsController < Product::Base
 		end
 
 		if current_user_location.present?
-			@products = @q.result.includes(:company, :category).near(current_user_location_coordinates, 500).paginate(page: params[:page])
+			@products = @q.result.includes(:company).near(current_user_location_coordinates, 500).paginate(page: params[:page])
 		else
-			@products = @q.result.includes(:company, :category).all.paginate(page: params[:page])
+			@products = @q.result.includes(:company).all.paginate(page: params[:page])
 		end
 	end
 end

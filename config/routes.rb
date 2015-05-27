@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     resources :feedbacks, only: [:new, :create]
     
     resources :companies, module: :company do
-      resources :messages
       resources :products
     end
 

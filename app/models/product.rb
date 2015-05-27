@@ -6,10 +6,8 @@ class Product < ActiveRecord::Base
 	mount_uploader :product_picture, ProductPictureUploader
 
 	belongs_to :company
-	belongs_to :category
 
-	validates_presence_of [:name, :price_in_cent, :product_picture]
-	validates :price, numericality: true
+	validates_presence_of [:name, :product_picture]
 	validates :order_link, url: { allow_blank: true }
 
 	def price
@@ -24,6 +22,22 @@ class Product < ActiveRecord::Base
 
 	def price=(amount)
 		self.price_in_cent = amount.gsub(',', '.').to_d * 100.0
+	end
+	
+	def price_on_request
+		if price_in_cent.nil?
+			true
+		else
+			false
+		end
+	end
+
+	alias_method :price_on_request?, :price_on_request
+
+	def price_on_request=(value)
+		if value == true || value == "1"
+			self.price_in_cent = nil
+		end
 	end
 
 	STATUSES = [:active, :inactive]

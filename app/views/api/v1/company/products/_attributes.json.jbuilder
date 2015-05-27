@@ -14,16 +14,6 @@ json.picture do
 	end
 end
 
-json.category do
-	if product.category.present?
-		json.id product.category.id
-		json.name product.category.name
-	else
-		json.id nil
-		json.name nil
-	end
-end
-
 if product.respond_to? :distance
 	json.distance product.distance.round(2)
 end

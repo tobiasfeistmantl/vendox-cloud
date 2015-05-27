@@ -26,9 +26,6 @@
 					<% end %>
 				</small>
 			</h1>
-			<% if @product.category %>
-				<p><span class="label label-default"><%= @product.category.name %></span></p>
-			<% end %>
 			<% if @product.order_link.present? %>
 				<%= link_to t('order'), @product.order_link, class: 'btn btn-primary', target: '_blank' %>
 			<% end %>

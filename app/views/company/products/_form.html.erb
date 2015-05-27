@@ -1,10 +1,9 @@
 <%= simple_form_for [@company, @product] do |f| %>
 	<%= f.input :name %>
-	<%= f.input :price_on_request %>
+	<%= f.input :price_on_request, as: :boolean %>
 	<%= f.input :price, required: true %>
 	<%= f.input :description %>
 	<%= f.input :status, collection: Product::STATUSES, include_blank: false, required: true %>
-	<%= f.association :category %>
 	<%= f.input :order_link %>
 	<%= f.input :product_picture %>
 

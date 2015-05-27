@@ -20,7 +20,6 @@ class Company < ActiveRecord::Base
 	before_validation :normalize_vat_number
 
 	has_many :products
-	has_many :messages
 
 	def address
 		[street, zip_code, locality].compact.join(', ')
@@ -50,11 +49,5 @@ class Company < ActiveRecord::Base
 
 	def normalize_vat_number
 		self.vat_number = Valvat::Utils.normalize(vat_number)
-	end
-
-	def check_if_from_austria
-		if not Valvat::Utils.split(vat_number)[0] == "AT"
-			errors.add(:vat_number, "not from austria")
-		end
 	end
 end

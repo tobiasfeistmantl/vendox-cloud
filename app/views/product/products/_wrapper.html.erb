@@ -20,10 +20,6 @@
 					<% end %>
 				</small>
 			</h2>
-
-			<% if product.category && params[:q] && params[:q][:category_id_eq].blank? %>
-				<span class="label label-default"><%= product.category.name %></span>
-			<% end %>
 		</div>
 		<% if defined?(distance) && distance == true && current_user_location %>
 			<div class="col-md-3 text-right">
