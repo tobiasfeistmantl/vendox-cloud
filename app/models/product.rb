@@ -39,7 +39,7 @@ class Product < ActiveRecord::Base
 			self.price_in_cent = nil
 		end
 	end
-
+	
 	STATUSES = [:active, :inactive]
 	enum status: STATUSES
 
