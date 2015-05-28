@@ -29,7 +29,7 @@
 	<%= render 'shared/footer' %>
 </div>
 
-<% if not current_user_location && !current_user_location_expired? %>
+<% if not current_user.position %>
 	<script type="text/javascript">
 			$(function() {
 				autoLocation();

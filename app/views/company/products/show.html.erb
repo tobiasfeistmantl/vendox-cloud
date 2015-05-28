@@ -21,8 +21,8 @@
 				<%= @product.name %>
 				<small>
 					<%= t('by_model', model: link_to(@company.name, @company)).html_safe %>
-					<% if current_user_location.present? %>
-						<br><%= @product.distance_to(current_user_location).round(2) %> km <%= t('away') %>
+					<% if current_user.coordinates.present? %>
+						<br><%= @product.distance_to(current_user.coordinates).round(2) %> km <%= t('away') %>
 					<% end %>
 				</small>
 			</h1>

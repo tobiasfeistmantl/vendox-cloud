@@ -1,15 +1,13 @@
 <div class="col-md-12 footer text-center">
 	<div class="current-location-wrapper">
-		<% if current_user_location %>
+		<% if user_address %>
 			<span class="current-location-info">
 				<%= t('your_current_location_is') %>
 				<strong>
-					<%= current_user_location %>
+					<%= user_address %>
 				</strong>
 			</span>
-			<% unless company_signed_in? %>
-				| <%= link_to t('renew_location'), "#", class: 'user-location-renew-button' %>
-			<% end %>
+			| <%= link_to t('renew_location'), "#", class: 'user-location-renew-button' %>
 		<% end %>
 	</div>
 

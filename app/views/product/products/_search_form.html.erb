@@ -3,7 +3,7 @@
 		<%= search_form_for @q do |f| %>
 			<%= f.input :name_or_description_or_company_name_cont, label: false, html: { class: 'product-name-field' } %>
 			<div class="form-group location-form-group">
-				<%= text_field_tag :location, current_user_location, placeholder: t('location_were_you_are'), class: 'form-control current-location-field' %>
+				<%= text_field_tag :location, user_address, placeholder: t('location_were_you_are'), class: 'form-control current-location-field' %>
 				<span id="helpBlock" class="help-block"><%= t('address_not_valid') %></span>
 			</div>
 

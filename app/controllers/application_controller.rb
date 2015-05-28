@@ -5,18 +5,17 @@ class ApplicationController < ActionController::Base
 
 	include ApplicationHelper
 	include LocationsHelper
+	include UserHelper
 
 	before_action :set_locale
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	def set_user_position
-		set_current_user_location(params[:addr], params[:lat], params[:lng])
+		current_user.positions.create(latitude: params[:lat], longitude: params[:lng])
 
-		if params[:a] == "true"
-			session[:auto_located] = true
-		end
+		session[:user_address] = params[:addr]
 		
-		render text: "#{t('your_current_location_is')} #{current_user_location}"
+		render text: "#{t('your_current_location_is')} #{user_address}"
 	end
 
 	def set_locale

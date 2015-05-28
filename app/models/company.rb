@@ -45,6 +45,10 @@ class Company < ActiveRecord::Base
 		end
 	end
 
+	def coordinates
+		[latitude, longitude]
+	end
+
 	protected
 
 	def normalize_vat_number

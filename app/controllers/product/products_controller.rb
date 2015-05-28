@@ -3,13 +3,13 @@ class Product::ProductsController < Product::Base
 		@q = Product.includes(:company).active.ransack(params[:q])
 
 		if params[:location].present? && params[:lng].present? && params[:lat].present?
-			set_current_user_location(params[:location], params[:lat], params[:lng])
+			current_user.positions.create(latitude: params[:lat], longitude: params[:lng])
 
-			session[:auto_located] = false
+			session[:user_address] = params[:location]
 		end
 
-		if current_user_location.present?
-			@products = @q.result.near(current_user_location_coordinates, 500).paginate(page: params[:page])
+		if current_user.position.present?
+			@products = @q.result.near(current_user.coordinates, 500).paginate(page: params[:page])
 		else
 			@products = @q.result.paginate(page: params[:page])
 		end
