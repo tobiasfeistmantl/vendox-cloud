@@ -1,4 +1,10 @@
-json.extract! product, :id, :name, :price, :description, :longitude, :latitude
+json.extract! product, :id, :name, :price, :longitude, :latitude
+
+if product.description.present?
+	json.description product.description
+else
+	json.description nil
+end
 
 if product.order_link.present?
 	json.order_link product.order_link
