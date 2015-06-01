@@ -5,7 +5,7 @@ class Api::V1::Product::ProductsController < Product::Base
 		@q = Product.active.includes(:company).ransack(params[:q])
 
 		if params[:lat].present? && params[:lng].present?
-			@products = @q.result.near([params[:lat], params[:lng]], 20)
+			@products = @q.result.near([params[:lat], params[:lng]], 5000).paginate(page: params[:page])
 		else
 			@products = @q.result.paginate(page: params[:page])
 		end

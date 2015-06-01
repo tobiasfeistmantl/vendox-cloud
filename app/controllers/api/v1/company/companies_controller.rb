@@ -5,7 +5,7 @@ class Api::V1::Company::CompaniesController < Company::Base
 
 	def index
 		if params[:lat] && params[:lng]
-			@companies = Company.near([params[:lat], params[:lng]], 20).paginate(page: params[:page])
+			@companies = Company.near([params[:lat], params[:lng]], 5000).paginate(page: params[:page])
 		else
 			@companies = Company.all.paginate(page: params[:page])
 		end
