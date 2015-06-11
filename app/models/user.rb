@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	before_save :generate_token
+
 	has_many :positions, class_name: "UserPosition"
 
 	def coordinates
@@ -16,6 +18,14 @@ class User < ActiveRecord::Base
 			if not last_position.expired?
 				last_position
 			end
+		end
+	end
+
+	private
+
+	def generate_token
+		if token.nil?
+			self.token = SecureRandom.urlsafe_base64
 		end
 	end
 end
