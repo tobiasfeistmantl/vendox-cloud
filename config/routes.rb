@@ -25,6 +25,10 @@ Rails.application.routes.draw do
       end
 
       resources :products, module: :product, only: [:index]
+
+      resources :users, module: :user, param: :token, only: [:create, :show] do
+        resources :positions, only: [:index]
+      end
     end
   end
 
