@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       resources :products, module: :product, only: [:index]
 
       resources :users, module: :user, param: :token, only: [:create, :show] do
-        resources :positions, only: [:index]
+        resources :positions, only: [:index, :create, :show]
       end
     end
   end

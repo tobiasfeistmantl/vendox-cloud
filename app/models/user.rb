@@ -15,9 +15,7 @@ class User < ActiveRecord::Base
 
 	def position
 		if last_position = positions.last
-			if not last_position.expired?
-				last_position
-			end
+			last_position
 		end
 	end
 

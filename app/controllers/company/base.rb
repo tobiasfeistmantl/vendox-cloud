@@ -1,5 +1,5 @@
 class Company::Base < ApplicationController
-	before_action :set_company, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+	before_action :set_company
 
 	protected
 
@@ -11,9 +11,7 @@ class Company::Base < ApplicationController
 	end
 
 	def check_company_authorization!
-		if current_company == @company
-
-		else
+		unless current_company == @company
 			flash[:danger] = t('not_authorized')
 			redirect_back and return
 		end

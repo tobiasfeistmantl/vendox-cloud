@@ -1,6 +1,4 @@
-class Api::V1::Company::ProductsController < Company::Base
-	respond_to :json
-
+class Api::V1::Company::ProductsController < Api::V1::Company::Base
 	before_action :set_product, only: :show
 
 	def index

@@ -1,7 +1,5 @@
-class Api::V1::User::UsersController < User::Base
+class Api::V1::User::UsersController < Api::V1::User::Base
 	protect_from_forgery :except => :create
-
-	respond_to :json
 
 	before_action :set_user, only: [:show]
 
@@ -9,23 +7,13 @@ class Api::V1::User::UsersController < User::Base
 		@user = User.new
 
 		if @user.save
-			render json: @user
+			respond_with @user, location: api_v1_user_url(@user.token)
 		else
-			render nothing: true
+			render json: { errors: @user.errors.full_messages }, status: 400
 		end
 	end
 
 	def show
-		render json: @user
-	end
-
-	def set_user
-		@user = User.find_by(token: params[:token])
-
-		unless @user
-			respond_with "Not Found", status: 404
-
-			return
-		end
+		respond_with @user
 	end
 end
