@@ -1,5 +1,5 @@
-class Api::V1::User::Base < User::Base
-	respond_to :json
+class Api::V1::User::Base < Api::V1::Base
+	before_action :set_user
 
 	protected
 

@@ -1,5 +1,5 @@
-class Api::V1::Company::Base < Company::Base
-	respond_to :json
+class Api::V1::Company::Base < Api::V1::Base
+	before_action :set_company
 
 	protected
 
