@@ -1,15 +1,21 @@
 class Api::V1::User::Base < Api::V1::Base
-	before_action :set_user
+	include Api::V1::User::SessionsHelper
+
+	before_action :set_user_session
 
 	protected
 
-	def set_user
-		@user = User.find_by(token: params[:token] || params[:user_token])
+	def set_user_session
+		if params[:session_token]
+			@user_session = find_user_session_by_token(params[:session_token])
 
-		unless @user
-			respond_with "Not Found", status: 404
-			
-			return
+			unless @user_session
+				render json: { errors: ["Invalid session token"] }, status: 404
+				
+				return
+			end
+		else
+			render json: { errors: ["No session token provided"] }, status: 401
 		end
 	end
 end

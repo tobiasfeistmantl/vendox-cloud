@@ -18,18 +18,17 @@ Rails.application.routes.draw do
     get ':id' => 'company/companies#show'
   end
 
-  constraints subdomain: :api do
-    namespace 'api', defaults: { format: :json } do
-      namespace 'v1' do
-        resources :companies, module: :company, only: [:index, :show] do 
-          resources :products, only: [:index, :show]
-        end
+  namespace 'api', defaults: { format: :json } do
+    namespace 'v1' do
+      resources :companies, module: :company, only: [:index, :show] do 
+        resources :products, only: [:index, :show]
+      end
 
-        resources :products, module: :product, only: [:index]
+      resources :products, module: :product, only: [:index]
 
-        resources :users, module: :user, param: :token, only: [:create, :show] do
-          resources :positions, only: [:index, :create, :show]
-        end
+      namespace :user, path: :users do
+        resources :sessions, param: :session_token, only: [:create, :show]
+        resources :positions, only: [:index, :create, :show]
       end
     end
   end

@@ -1,7 +1,10 @@
-class User < ActiveRecord::Base
-	before_save :generate_token
+class UserSession < ActiveRecord::Base
+	before_save :generate_unique_secure_token
 
 	has_many :positions, class_name: "UserPosition"
+
+	validates :token, uniqueness: true
+	validates :device, presence: true
 
 	def coordinates
 		@current_position ||= positions.last
@@ -21,9 +24,11 @@ class User < ActiveRecord::Base
 
 	private
 
-	def generate_token
-		if token.nil?
-			self.token = SecureRandom.urlsafe_base64
+	def generate_unique_secure_token
+		unless self.token
+			token = SecureRandom.urlsafe_base64
+
+			self.token = token
 		end
 	end
 end

@@ -1,13 +1,13 @@
 class Api::V1::Product::ProductsController < Api::V1::Product::Base
+	include Api::V1::User::SessionsHelper
+
 	def index
-		@q = Product.active.includes(:company).ransack(params[:q])
+		@q = ::Product.active.includes(:company).ransack(params[:q])
 
-		@user = ::User.find_by(token: params[:user_token])
+		find_user_session_by_token(params[:session_token])
 
-		if @user && @user.coordinates
-			@products = @q.result.near(@user.coordinates, 5000).paginate(page: params[:page])
-		elsif params[:lat].present? && params[:lng].present?
-			@products = @q.result.near([params[:lat], params[:lng]], 5000).paginate(page: params[:page])
+		if @user_session && @user_session.coordinates
+			@products = @q.result.near(@user_session.coordinates, 5000).paginate(page: params[:page])
 		else
 			@products = @q.result.paginate(page: params[:page])
 		end

@@ -4,16 +4,16 @@ class Api::V1::User::PositionsController < Api::V1::User::Base
 	before_action :set_position, only: [:show]
 
 	def index
-		@positions = @user.positions
+		@positions = @user_session.positions
 
 		respond_with @positions
 	end
 
 	def create
-		@position = @user.positions.new user_position_params
+		@position = @user_session.positions.new user_position_params
 
 		if @position.save
-			respond_with @position, location: api_v1_user_position_url(@user.token, @position)
+			respond_with @position, location: api_v1_user_position_url(@position, session_token: @user_session.token)
 		else
 			render json: { errors: @position.errors.full_messages }, status: 400
 		end
@@ -30,7 +30,7 @@ class Api::V1::User::PositionsController < Api::V1::User::Base
 	end
 
 	def set_position
-		@position = @user.positions.find(params[:id])
+		@position = @user_session.positions.find(params[:id])
 	rescue ActiveRecord::RecordNotFound
 		respond_with "Not found", status: 404
 

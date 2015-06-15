@@ -1,3 +1,3 @@
-class Api::V1::Base < ApplicationController
+class Api::V1::Base < Api::Base
 	respond_to :json
 end
