@@ -16,6 +16,8 @@ class Api::V1::User::Base < Api::V1::Base
 			end
 		else
 			render json: { errors: ["No session token provided"] }, status: 401
+
+			return
 		end
 	end
 end
