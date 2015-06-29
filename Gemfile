@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#ruby-gemset=web_development
+ruby '2.2.1'
+
 group :development, :test do
 	gem 'byebug'
 	gem 'web-console'

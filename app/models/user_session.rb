@@ -11,8 +11,6 @@ class UserSession < ActiveRecord::Base
 
 		if @current_position
 			[@current_position.latitude, @current_position.longitude]
-		else
-			nil
 		end
 	end
 

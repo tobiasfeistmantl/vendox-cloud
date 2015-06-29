@@ -7,9 +7,9 @@ class Api::V1::User::SessionsController < Api::V1::User::Base
 		@user_session = ::UserSession.new device: params[:device]
 
 		if @user_session.save
-			respond_with @user_session, location: api_v1_user_session_url(@user_session.token)
+			render json: @user_session, location: api_v1_user_session_url(@user_session.token), status: 201
 		else
-			render json: { errors: @user_session.errors.full_messages }, status: 400
+			render json: { errors: @user_session.errors }, status: 400
 		end
 	end
 
