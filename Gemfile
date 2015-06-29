@@ -11,7 +11,7 @@ group :production do
 	gem 'newrelic_rpm'
 end
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.2'
 gem 'pg'
 gem 'sass-rails'
 gem 'uglifier'

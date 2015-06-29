@@ -14,6 +14,6 @@ class Api::V1::User::SessionsController < Api::V1::User::Base
 	end
 
 	def show
-		respond_with @user_session
+		render json: @user_session
 	end
 end
