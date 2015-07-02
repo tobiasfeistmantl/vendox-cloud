@@ -29,13 +29,18 @@
 	<%= render 'shared/footer' %>
 </div>
 
-<% if not current_user.position %>
-	<script type="text/javascript">
-			$(function() {
-				autoLocation();
-			});	
-	</script>
-<% end %>
+<script type="text/javascript">
+$(function() {
+	session_token = "<%= current_user_session(create_if_nil: true).token %>"
+	user_address = "<%= user_address %>"
+
+	if (user_address === "") {
+		$(".current-location-wrapper").hide();
+
+		autoLocation();
+	}
+});
+</script>
 
 <% if Rails.env.development? %>
 	<%= console %>

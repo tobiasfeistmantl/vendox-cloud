@@ -13,8 +13,10 @@ class Api::V1::User::PositionsController < Api::V1::User::Base
 	def create
 		@position = @user_session.positions.new user_position_params
 
+		session[:user_address] = params[:position][:address]
+
 		if @position.save
-			render json: @position, location: api_v1_user_position_url(@position), status: 201
+			render "create", location: api_v1_user_position_url(@position), status: 201
 		else
 			render json: { errors: @position.errors }, status: 400
 		end

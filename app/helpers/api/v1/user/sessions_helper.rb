@@ -8,4 +8,25 @@ module Api::V1::User::SessionsHelper
 			end
 		end
 	end
+
+	def current_user_session(create_if_nil: false)
+		if session[:session_token].present?
+			if @user_session.present?
+				return @user_session
+			else
+				UserSession.find_each do |user_session|
+					if Devise.secure_compare(user_session.token, session[:session_token])
+						@user_session = user_session
+					end
+				end
+			end
+		end
+
+		if @user_session.nil? && create_if_nil
+			@user_session = UserSession.create(device: request.env["HTTP_USER_AGENT"])
+			session[:session_token] = @user_session.token
+		end
+
+		return @user_session
+	end
 end

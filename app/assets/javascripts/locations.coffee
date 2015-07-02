@@ -21,11 +21,30 @@ setPosition = (position) ->
 	geocoder.geocode { location: latLng }, (results, status) ->
 		address = results[0].formatted_address
 
-		path = "/position?lng=" + longitude + "&lat=" + latitude + "&addr=" + address + "&a=true"
+		path = "/api/v1/users/positions"
+
+		data = {
+			"position": {
+				"longitude": longitude,
+				"latitude": latitude,
+				"address": address
+			}
+		}
 
 		if status == google.maps.GeocoderStatus.OK
-			$.get path, (data, status) ->
-				$('.current-location-info').html data
+			user_address = address
+
+			$.ajax
+				url: path,
+				type: 'post',
+				data: data,
+				dataType: 'json',
+				headers: {
+					"Authorization": "Token token=" + session_token
+				},
+			.done (data, status) ->
+				$('#user-address').html user_address
+				$('.current-location-wrapper').fadeIn()
 
 				if $('.current-location-field').length
 					$('.current-location-field').val(address)

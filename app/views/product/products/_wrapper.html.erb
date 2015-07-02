@@ -21,7 +21,7 @@
 				</small>
 			</h2>
 		</div>
-		<% if defined?(distance) && distance == true && current_user.position %>
+		<% if defined?(distance) && distance == true && current_user_session && current_user_session.position %>
 			<div class="col-md-3 text-right">
 				<h2>
 					<%= product.distance.round(2) %> km
