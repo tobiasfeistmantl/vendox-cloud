@@ -7,30 +7,6 @@ de:
       mark: '*'
     error_notification:
       default_message: "Bitte überprüfe die Fehler unten:"
-    labels:
-      defaults:
-        name: Firmenname
-        email: E-Mail Adresse
-        password: Passwort
-        password_confirmation: Passwortbestätigung
-      company:
-        vat_number: UID Nummer
-        street: Straße
-        zip_code: PLZ
-        locality: Ortschaft
-        phone_number: Telefonnummer
-      product:
-        name: Produktname
-        price: Preis
-        product_picture: Produktbild
-        status: Status
-        category: Kategorie
-        order_link: Bestell-Link
-        price_on_request: Preis auf Nachfrage
-      feedback:
-        email: E-Mail Adresse
-        subject: Betreff
-        description: Beschreibung
     placeholders:
       defaults:
         name_or_description_or_company_name_cont: Produktname, Beschreibung oder Firmenname
@@ -45,6 +21,3 @@ de:
         order_link: z.B. http://vendox.net/products
       message:
         content: "Vorschläge, Wünsche, Anregungen,...?"
-    prompts:
-      defaults:
-        category_name_cont: Kategorie (Keine Zeit für falsche Produkte)

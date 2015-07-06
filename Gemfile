@@ -7,6 +7,7 @@ group :development, :test do
 	gem 'byebug'
 	gem 'web-console'
 	gem 'spring'
+	gem 'dotenv-rails'
 end
 
 group :production do

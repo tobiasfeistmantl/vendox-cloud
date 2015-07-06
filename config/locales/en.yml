@@ -18,23 +18,6 @@ en:
     name: Name
     price: Price
     status: Status
-  activerecord:
-    models:
-      company:
-        one: Company
-        other: Companies
-      product:
-        one: Product
-        other: Products
-      message:
-        one: Message
-        other: Messages
-    errors:
-      models:
-        product:
-          attributes:
-            order_link:
-              url: is not a valid URL (Maybe http:// forgot?)
   active: Active
   inactive: Inactive
   new: New
@@ -73,7 +56,7 @@ en:
     important_currently_free: Important! Currently free!
     young_company: Vendox is a young company who builds currently the stocklist up.
     free: "Don't miss the chance to add your products to vendox for free!"
-    register: Basicly register as an austrian business
+    register: Basicly register as a business
     start_selling: and start selling!
     here: here
   description: Description
@@ -90,7 +73,5 @@ en:
   register: Register
   already_registered: Already registered?
   login: Login
-  errors:
-    not_from_austria: not from austria
   price_on_request: Price on request
   learn_more: Learn more

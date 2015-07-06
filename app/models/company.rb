@@ -7,8 +7,7 @@ class Company < ActiveRecord::Base
 
 	validates_presence_of [:name, :email, :street, :zip_code, :locality, :vat_number, :longitude, :latitude, :phone_number]
 	validates_uniqueness_of [:name, :email, :phone_number, :slug, :vat_number]
-	validates_with CountryValidator
-
+	
 	validates :vat_number, valvat: { lookup: true }
 
 	extend FriendlyId
@@ -16,8 +15,6 @@ class Company < ActiveRecord::Base
 
 	geocoded_by :address
 	before_validation :geocode, if: ->(obj){ obj.address.present? and obj.street_changed? }
-
-	before_validation :normalize_vat_number
 
 	has_many :products
 
@@ -47,11 +44,5 @@ class Company < ActiveRecord::Base
 
 	def coordinates
 		[latitude, longitude]
-	end
-
-	protected
-
-	def normalize_vat_number
-		self.vat_number = Valvat::Utils.normalize(vat_number)
 	end
 end

@@ -1,0 +1,25 @@
+de:
+  activerecord:
+    attributes:
+      company:
+        name: Firmenname
+        email: E-Mail Adresse
+        vat_number: UID Nummer
+        street: Straße
+        zip_code: PLZ
+        locality: Ortschaft
+        phone_number: Telefonnummer
+        password: Passwort
+        password_confirmation: Passwort Bestätigung
+      product:
+        name: Produktname
+        price: Preis
+        product_picture: Produktbild
+        status: Status
+        category: Kategorie
+        order_link: Bestell-Link
+        price_on_request: Preis auf Nachfrage
+      feedback:
+        email: E-Mail Adresse
+        subject: Betreff
+        description: Beschreibung

@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-	# before_save :set_long_lat
+	before_save :set_long_lat
 
 	reverse_geocoded_by :latitude, :longitude
 

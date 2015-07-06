@@ -1,0 +1,16 @@
+de:
+  activerecord:
+    models:
+      company: Unternehmen
+      product:
+        one: Produkt
+        other: Produkte
+      message:
+        one: Nachricht
+        other: Nachrichten
+    errors:
+      models:
+        product:
+          attributes:
+            order_link:
+              url: keine gültige URL (http:// vergessen?)

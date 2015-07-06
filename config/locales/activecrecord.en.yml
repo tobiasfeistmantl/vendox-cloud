@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    models:
+      company:
+        one: Company
+        other: Companies
+      product:
+        one: Product
+        other: Products
+      message:
+        one: Message
+        other: Messages
+    errors:
+      models:
+        product:
+          attributes:
+            order_link:
+              url: is not a valid URL (Maybe http:// forgot?)

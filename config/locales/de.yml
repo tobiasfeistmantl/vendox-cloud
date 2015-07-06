@@ -18,23 +18,6 @@ de:
     name: Name
     price: Preis
     status: Status
-  activerecord:
-    models:
-      company: Unternehmen
-
-
-      product:
-        one: Produkt
-        other: Produkte
-      message:
-        one: Nachricht
-        other: Nachrichten
-    errors:
-      models:
-        product:
-          attributes:
-            order_link:
-              url: keine gültige URL (http:// vergessen?)
   active: Aktiv
   inactive: Inaktiv
   new: Neu
@@ -73,7 +56,7 @@ de:
     important_currently_free: Wichtig! Derzeit kostenlos!
     young_company: Vendox ist ein junges Unternehmen das derzeit den Produktstamm aufbaut.
     free: Lass dir die Möglichkeit nicht entgehen, deine Produkte jetzt bei Vendox kostenlos einzustellen!
-    register: Einfach als österreichisches Unternehmen
+    register: Einfach als Unternehmen
     start_selling: und verkaufen anfangen!
     here: hier registrieren
   description: Beschreibung
@@ -90,7 +73,5 @@ de:
   register: Registrieren
   already_registered: Bereits registriert?
   login: Anmelden
-  errors:
-    not_from_austria: nicht aus Österreich
   price_on_request: Preis auf Nachfrage
   learn_more: Mehr erfahren

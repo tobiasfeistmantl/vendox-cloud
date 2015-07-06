@@ -1,8 +1,6 @@
 module CountHelper
 	def count_user(product)
-		unless session[:visited_products].kind_of?(Array)
-			session[:visited_products] = []
-		end
+		session[:visited_products] = [] unless session[:visited_products].kind_of?(Array)
 
 		if not current_company == product.company
 			if not session[:visited_products].include?(product.id)
