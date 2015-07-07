@@ -10,6 +10,8 @@ class Product < ActiveRecord::Base
 	validates_presence_of [:name, :product_picture]
 	validates :order_link, url: { allow_blank: true }
 
+	self.per_page = 10
+
 	def price
 		unless price_on_request
 			if price_in_cent

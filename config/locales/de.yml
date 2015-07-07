@@ -75,3 +75,6 @@ de:
   login: Anmelden
   price_on_request: Preis auf Nachfrage
   learn_more: Mehr erfahren
+  will_paginate:
+    previous_label: Zurück
+    next_label: Weiter

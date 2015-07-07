@@ -28,7 +28,7 @@ class Company::ProductsController < Company::Base
 		@product = @company.products.new product_params
 
 		if @product.save
-			@company.decrease_product_counter
+			@company.decrement_product_counter
 			@company.save
 
 			flash[:success] = t('messages.created', model: Product.model_name.human)

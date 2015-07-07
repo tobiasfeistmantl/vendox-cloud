@@ -35,4 +35,6 @@
 	<% @products.each do |product| %>
 		<%= render 'product/products/wrapper', product: product %>
 	<% end %>
+
+	<%= will_paginate @products, renderer: BootstrapPagination::Rails %>
 <% end %>

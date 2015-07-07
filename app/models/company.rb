@@ -30,15 +30,13 @@ class Company < ActiveRecord::Base
 		end
 	end
 
-	def decrease_product_counter(nr = 1)
+	def decrement_product_counter(nr = 1)
 		if not remaining_products.nil?
 			if remaining_products >= nr
-				self.remaining_products -= nr
+				update(remaining_products: (remaining_products - nr))
 			else
 				false
 			end
-		else
-			nil
 		end
 	end
 
