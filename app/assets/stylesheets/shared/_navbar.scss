@@ -1,6 +1,6 @@
 .navbar-static-top {
 	background-image: url("/design/nav-bg.png");
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-size: 100%;
 
 	.navbar-brand {
@@ -9,5 +9,5 @@
 		}
 
 		padding-top: 13px;
-	}
+	}	
 }
