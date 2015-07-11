@@ -29,7 +29,7 @@ class Api::V1::User::Base < Api::V1::Base
 			@user_session = find_user_session_by_token(session_token)
 
 			unless @user_session
-				render json: { errors: [ "User session not found" ] }, status: 404
+				render json: { errors: [ "User session not found" ] }, status: 401
 			end
 		else
 			render json: { errors: [ "No session token provided" ] }, status: 401

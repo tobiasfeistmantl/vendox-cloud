@@ -17,4 +17,5 @@
 //= require analytics
 //= require underscore
 //= require gmaps/google
+//= require js.cookie
 //= require_tree .

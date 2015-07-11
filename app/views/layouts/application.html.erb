@@ -31,13 +31,39 @@
 
 <script type="text/javascript">
 $(function() {
-	session_token = "<%= current_user_session(create_if_nil: true).token %>"
 	user_address = "<%= user_address %>"
 
-	if (user_address === "") {
-		$(".current-location-wrapper").hide();
+	if (typeof Cookies.get("session_token") === 'undefined') {
+		var path = "/api/v1/users/sessions"
 
-		autoLocation();
+		var data = {
+			"device": navigator.userAgent
+		}
+
+		$.ajax({
+			url: path,
+			type: 'post',
+			data: data,
+			dataType: 'json'
+		}).done(function(data, status) {
+			Cookies.set("session_token", data["token"])
+
+			session_token = data["token"]
+
+			if (user_address === "") {
+				$(".current-location-wrapper").hide();
+
+				autoLocation();
+			}
+		})
+	} else {
+		session_token = Cookies.get("session_token")
+
+		if (user_address === "") {
+			$(".current-location-wrapper").hide();
+
+			autoLocation();
+		}
 	}
 });
 </script>
