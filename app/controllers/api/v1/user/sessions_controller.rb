@@ -1,7 +1,7 @@
 class Api::V1::User::SessionsController < Api::V1::User::Base
 	protect_from_forgery :except => :create
 
-	before_action :set_user_session, only: [:show]
+	before_action :set_user_session_with_token, only: [:show]
 
 	def create
 		@user_session = ::UserSession.new device: params[:device]
