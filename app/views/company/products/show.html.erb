@@ -5,7 +5,7 @@
 	<%= tag :meta, property: "og:type", content: "product" %>
 	<%= tag :meta, property: "og:url", content: company_product_url(@company, @product) %>
 	<%= tag :meta, property: "og:image", content: @product.product_picture.url %>
-	<%= tag :meta, property: "og:locale", content: "de_AT" %>
+	<%= tag :meta, property: "og:locale", content: "de_DE" %>
 	<%= tag :meta, property: "og:locale:alternate", content: "en_US" %>
 	<%= tag :meta, property: "og:site_name", content: "Vendox" %>
 	<%= tag :meta, property: "product:price:amount", content: @product.price if @product.price.present? %>
