@@ -10,6 +10,8 @@
 	<%= tag :meta, property: "og:site_name", content: "Vendox" %>
 	<%= tag :meta, property: "product:price:amount", content: @product.price if @product.price.present? %>
 	<%= tag :meta, property: "product:price:currency", content: "EUR" if @product.price.present? %>
+	<%= tag :meta, property: "product:sale_price:amount", content: @product.price if @product.price.present? %>
+	<%= tag :meta, property: "product:sale_price:currency", content: "EUR" if @product.price.present? %>
 	<%= tag :meta, property: "product:retailer_title", content: @company.name %>
 	<%= tag :meta, property: "product:is_product_shareable", content: true %>
 <% end %>
