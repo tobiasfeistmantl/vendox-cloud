@@ -18,4 +18,5 @@
 //= require underscore
 //= require gmaps/google
 //= require js.cookie
+//= require facebook
 //= require_tree .

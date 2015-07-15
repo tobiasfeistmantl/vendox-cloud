@@ -1,3 +1,16 @@
+<% content_for :meta_tags do %>
+	<%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
+	<%= tag :meta, property: "og:title", content: @product.name %>
+	<%= tag :meta, property: "og:type", content: "product" %>
+	<%= tag :meta, property: "og:url", content: company_product_url(@company, @product) %>
+	<%= tag :meta, property: "og:image", content: @product.product_picture.url %>
+	<%= tag :meta, property: "og:locale", content: "de_AT" %>
+	<%= tag :meta, property: "og:site_name", content: "Vendox" %>
+	<%= tag :meta, property: "product:price:amount", content: @product.price if @product.price.present? %>
+	<%= tag :meta, property: "product:price:currency", content: "EUR" if @product.price.present? %>
+	<%= tag :meta, property: "product:retailer_title", content: @company.name %>
+<% end %>
+
 <% provide(:title, @product.name) %>
 
 <div class="panel panel-default">
@@ -42,6 +55,10 @@
 
 				<span class="glyphicon glyphicon-earphone"></span> <%= @company.phone_number %>&nbsp;&nbsp;&nbsp;
 				<span class="glyphicon glyphicon-envelope"></span> <%= @company.email %>
+			</p>
+
+			<p>
+			<div class="fb-like" data-href="<%= company_product_url(@company, @product) %>" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 			</p>
 
 			<div class="thumbnail" id="map" style="height: 400px"></div>
