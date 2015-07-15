@@ -75,3 +75,4 @@ en:
   login: Login
   price_on_request: Price on request
   learn_more: Learn more
+  product_by: "This is a product by %{company}"
