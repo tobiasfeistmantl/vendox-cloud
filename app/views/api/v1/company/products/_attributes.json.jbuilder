@@ -23,3 +23,5 @@ end
 if product.respond_to? :distance
 	json.distance product.distance.round(2)
 end
+
+json.url company_product_url(company_id: product.company.id, id: product.id)
