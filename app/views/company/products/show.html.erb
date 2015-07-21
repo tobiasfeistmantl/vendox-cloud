@@ -1,4 +1,4 @@
-<% content_for :meta_tags do %>
+<% content_for :head do %>
 	<%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"] %>
 	<%= tag :meta, property: "og:title", content: @product.name %>
 	<%= tag :meta, property: "og:description", content: @product.description.present? ? @product.description : t('product_by', company: @company.name) %>
@@ -14,6 +14,25 @@
 	<%= tag :meta, property: "product:sale_price:currency", content: "EUR" if @product.price.present? %>
 	<%= tag :meta, property: "product:retailer_title", content: @company.name %>
 	<%= tag :meta, property: "product:is_product_shareable", content: true %>
+
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org/",
+		"@type": "Product",
+		"name": "<%= @product.name %>",
+		<% if @product.description.present? %>
+		"description": "<%= @product.description %>",
+		<% end %>
+		<% if @product.price.present? %>
+		"offers": {
+			"@type": "Offer",
+			"priceCurrency": "EUR",
+			"price": "<%= @product.price %>"
+		},
+		<% end %>
+		"image": "<%= @product.product_picture.url %>"
+	}
+	</script>
 <% end %>
 
 <% provide(:title, @product.name) %>
