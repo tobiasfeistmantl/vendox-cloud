@@ -72,7 +72,7 @@
 					<% if @product.price_on_request %>
 						<%= t('price_on_request') %>
 					<% else %>
-						<%= number_to_currency @product.price %>
+						<%= number_to_currency @product.price, locale: :de %>
 					<% end %>
 				</h3>
 				<%= @company.address %><br>

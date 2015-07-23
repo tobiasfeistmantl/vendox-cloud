@@ -11,7 +11,7 @@
 		<% @products.each do |product| %>
 			<tr>
 				<td><%= link_to product.name, [@company, product] %></td>
-				<td><%= number_to_currency product.price %></td>
+				<td><%= number_to_currency product.price, locale: :de %></td>
 				<td><%= t("#{product.status}") %></td>
 				<td><%= link_to t('edit'), edit_company_product_path(@company, product) %></td>
 				<td><%= link_to t('delete'), [@company, product], method: :delete %></td>

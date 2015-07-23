@@ -12,7 +12,7 @@
 					<% if product.price_on_request %>
 						<%= t('price_on_request') %>
 					<% else %>
-						<%= number_to_currency product.price %>
+						<%= number_to_currency product.price, locale: :de %>
 					<% end %>
 					<% if current_company == product.company %>
 						| <%= t('x_times_visited', count: product.count) %>
