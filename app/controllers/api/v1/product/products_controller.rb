@@ -6,7 +6,9 @@ class Api::V1::Product::ProductsController < Api::V1::Product::Base
 
 		@user_session = find_user_session_by_token(params[:session_token])
 
-		if @user_session && @user_session.coordinates
+		puts(params[:without_position].class)
+
+		if params[:without_position] != "1" && @user_session && @user_session.coordinates
 			@products = @q.result.near(@user_session.coordinates, 5000).paginate(page: params[:page])
 		else
 			@products = @q.result.paginate(page: params[:page])
