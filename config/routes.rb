@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|de/ do
     get 'position' => 'application#set_user_position'
     get 'imprint' => 'welcome#imprint'
+    get 'about' => 'welcome#about'
 
     devise_for :companies, controllers: { registrations: "companies/registrations" }, path_names: { sign_up: "register" }
 
