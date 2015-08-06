@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clothing_size_id: 
+  clothing_color_id: 
+
+two:
+  clothing_size_id: 
+  clothing_color_id: 

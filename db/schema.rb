@@ -11,21 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806184647) do
+ActiveRecord::Schema.define(version: 20150806203624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "clothing_colors", force: :cascade do |t|
-    t.integer  "clothing_size_id"
     t.string   "color"
     t.string   "hex_code"
     t.integer  "price_in_cent"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
-
-  add_index "clothing_colors", ["clothing_size_id"], name: "index_clothing_colors_on_clothing_size_id", using: :btree
 
   create_table "clothing_sizes", force: :cascade do |t|
     t.integer  "product_id"
@@ -106,6 +103,16 @@ ActiveRecord::Schema.define(version: 20150806184647) do
   add_index "products", ["company_id"], name: "index_products_on_company_id", using: :btree
   add_index "products", ["name"], name: "index_products_on_name", using: :btree
 
+  create_table "size_color_combinations", force: :cascade do |t|
+    t.integer  "clothing_size_id",  null: false
+    t.integer  "clothing_color_id", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "size_color_combinations", ["clothing_color_id"], name: "index_size_color_combinations_on_clothing_color_id", using: :btree
+  add_index "size_color_combinations", ["clothing_size_id"], name: "index_size_color_combinations_on_clothing_size_id", using: :btree
+
   create_table "user_positions", force: :cascade do |t|
     t.integer  "user_session_id"
     t.float    "longitude"
@@ -125,8 +132,9 @@ ActiveRecord::Schema.define(version: 20150806184647) do
 
   add_index "user_sessions", ["token"], name: "index_user_sessions_on_token", unique: true, using: :btree
 
-  add_foreign_key "clothing_colors", "clothing_sizes"
   add_foreign_key "clothing_sizes", "products"
   add_foreign_key "products", "companies"
+  add_foreign_key "size_color_combinations", "clothing_colors"
+  add_foreign_key "size_color_combinations", "clothing_sizes"
   add_foreign_key "user_positions", "user_sessions"
 end
