@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528090424) do
+ActiveRecord::Schema.define(version: 20150806184647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clothing_colors", force: :cascade do |t|
+    t.integer  "clothing_size_id"
+    t.string   "color"
+    t.string   "hex_code"
+    t.integer  "price_in_cent"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "clothing_colors", ["clothing_size_id"], name: "index_clothing_colors_on_clothing_size_id", using: :btree
+
+  create_table "clothing_sizes", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "clothing_sizes", ["product_id"], name: "index_clothing_sizes_on_product_id", using: :btree
 
   create_table "companies", force: :cascade do |t|
     t.string   "email",                     default: "", null: false
@@ -71,14 +92,15 @@ ActiveRecord::Schema.define(version: 20150528090424) do
     t.integer  "price_in_cent"
     t.integer  "company_id"
     t.integer  "status",          default: 0
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "product_picture"
     t.string   "order_link"
     t.text     "description"
     t.integer  "count",           default: 0
     t.float    "longitude"
     t.float    "latitude"
+    t.boolean  "clothes",         default: false, null: false
   end
 
   add_index "products", ["company_id"], name: "index_products_on_company_id", using: :btree
@@ -103,6 +125,8 @@ ActiveRecord::Schema.define(version: 20150528090424) do
 
   add_index "user_sessions", ["token"], name: "index_user_sessions_on_token", unique: true, using: :btree
 
+  add_foreign_key "clothing_colors", "clothing_sizes"
+  add_foreign_key "clothing_sizes", "products"
   add_foreign_key "products", "companies"
   add_foreign_key "user_positions", "user_sessions"
 end

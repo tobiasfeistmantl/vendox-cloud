@@ -7,6 +7,8 @@ class Product < ActiveRecord::Base
 
 	belongs_to :company
 
+	has_many :clothing_sizes
+
 	validates_presence_of [:name, :product_picture]
 	validates :order_link, url: { allow_blank: true }
 

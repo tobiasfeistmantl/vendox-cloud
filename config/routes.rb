@@ -33,6 +33,20 @@ Rails.application.routes.draw do
         resources :positions, only: [:index, :create, :show]
       end
     end
+
+    namespace 'v2' do
+      resources :companies, module: :company, only: [:index, :show] do 
+        resources :products, only: [:index, :show]
+      end
+
+      resources :products, module: :product, only: [:index]
+
+      namespace :user, path: :users do
+        resources :sessions, only: [:create]
+        get 'session' => "sessions#show"
+        resources :positions, only: [:index, :create, :show]
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
