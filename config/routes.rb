@@ -42,8 +42,7 @@ Rails.application.routes.draw do
       resources :products, module: :product, only: [:index]
 
       namespace :user, path: :users do
-        resources :sessions, only: [:create]
-        get 'session' => "sessions#show"
+        resources :sessions, only: [:create, :show]
         resources :positions, only: [:index, :create, :show]
       end
     end

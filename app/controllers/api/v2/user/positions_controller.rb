@@ -1,7 +1,4 @@
 class Api::V2::User::PositionsController < Api::V2::User::Base
-	protect_from_forgery :except => :create
-
-	before_action :set_user_session_with_token
 	before_action :set_position, only: [:show]
 
 	def index
@@ -13,12 +10,10 @@ class Api::V2::User::PositionsController < Api::V2::User::Base
 	def create
 		@position = @user_session.positions.new user_position_params
 
-		session[:user_address] = params[:position][:address]
-
 		if @position.save
-			render "create", location: api_V2_user_position_url(@position), status: 201
+			render "create", location: api_v2_user_position_url(@position), status: 201
 		else
-			render json: { errors: @position.errors }, status: 400
+			render json: { error: "UNABLE_TO_SAVE_POSITION", specific: @position.errors }, status: 400
 		end
 	end
 
@@ -35,7 +30,7 @@ class Api::V2::User::PositionsController < Api::V2::User::Base
 	def set_position
 		@position = @user_session.positions.find(params[:id])
 	rescue ActiveRecord::RecordNotFound
-		render json: { errors: [ "Position not found" ] }, status: 404
+		render json: { error: "POSITION_NOT_FOUND" }, status: 404
 
 		return
 	end
