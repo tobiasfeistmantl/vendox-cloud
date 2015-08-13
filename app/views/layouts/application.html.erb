@@ -36,7 +36,7 @@ $(function() {
 	user_address = "<%= user_address %>"
 
 	if (typeof Cookies.get("session_token") === 'undefined') {
-		var path = "/api/v1/users/sessions"
+		var path = "/api/v2/users/sessions"
 
 		var data = {
 			"device": navigator.userAgent
