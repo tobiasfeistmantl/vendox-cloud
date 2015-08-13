@@ -5,7 +5,7 @@ class Api::V2::Base < Api::Base
 	protected
 
 	def set_user_session
-		@user_session = UserSession.find(params[:user_session_id])
+		@user_session = UserSession.find(params[:sid])
 	rescue ActiveRecord::RecordNotFound
 		render json: {
 			error: "USER_SESSION_NOT_FOUND"
