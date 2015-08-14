@@ -7,7 +7,9 @@ class Api::V2::Company::Base < Api::V2::Base
 		@company = Company.includes(:products).find(params[:company_id] || params[:id])
 	rescue ActiveRecord::RecordNotFound
 		render json: {
-			error: "COMPANY_NOT_FOUND"
+			error: {
+				type: "COMPANY_NOT_FOUND"
+			}
 		}, status: 404
 
 		return

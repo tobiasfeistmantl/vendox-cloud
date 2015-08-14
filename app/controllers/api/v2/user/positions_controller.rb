@@ -14,8 +14,10 @@ class Api::V2::User::PositionsController < Api::V2::User::Base
 			render "create", location: api_v2_user_position_url(@position), status: 201
 		else
 			render json: {
-				error: "UNABLE_TO_SAVE_POSITION",
-				specific: @position.errors
+				error: {
+					type: "UNABLE_TO_SAVE_POSITION",
+					specific: @position.errors
+				}
 			}, status: 400
 		end
 	end
@@ -34,7 +36,9 @@ class Api::V2::User::PositionsController < Api::V2::User::Base
 		@position = @user_session.positions.find(params[:id])
 	rescue ActiveRecord::RecordNotFound
 		render json: {
-			error: "POSITION_NOT_FOUND"
+			error: { 
+				type: "POSITION_NOT_FOUND"
+			}
 		}, status: 404
 
 		return

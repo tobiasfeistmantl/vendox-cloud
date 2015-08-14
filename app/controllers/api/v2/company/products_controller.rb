@@ -14,7 +14,9 @@ class Api::V2::Company::ProductsController < Api::V2::Company::Base
 		@product = @company.products.active.find(params[:id])
 	rescue ActiveRecord::RecordNotFound
 		render json: {
-			error: "PRODUCT_NOT_FOUND"
+			error: {
+				type: "PRODUCT_NOT_FOUND"
+			}
 		}, status: 404
 
 		return

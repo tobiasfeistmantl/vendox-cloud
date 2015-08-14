@@ -5,8 +5,10 @@ class Api::V2::User::SessionsController < Api::V2::User::Base
 	def create
 		if not params[:session].present? && params[:session][:device].present?
 			render json: {
-				error: "PARAMETER_IS_MISSING",
-				specific: "session[device]"
+				error: {
+					type: "PARAMETER_IS_MISSING",
+					specific: "session[device]"
+				}
 			}, status: 400
 			return
 		end
@@ -17,8 +19,10 @@ class Api::V2::User::SessionsController < Api::V2::User::Base
 			render json: @user_session, location: api_v2_user_session_url(@user_session), status: 201
 		else
 			render json: {
-				error: "UNABLE_TO_SAVE_USER_SESSION",
-				specific: @user_session.errors
+				error: {
+					type: "UNABLE_TO_SAVE_USER_SESSION",
+					specific: @user_session.errors
+				}
 			}, status: 400
 		end
 	end
