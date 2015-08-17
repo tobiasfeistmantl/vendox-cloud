@@ -8,6 +8,8 @@ group :development, :test do
 	gem 'web-console'
 	gem 'spring'
 	gem 'dotenv-rails'
+	gem 'rspec-rails'
+	gem 'factory_girl'
 end
 
 group :production do
