@@ -17,7 +17,9 @@ class Company < ActiveRecord::Base
 	has_many :products
 
 	def address
-		[street, zip_code, locality].compact.join(', ')
+		if street.present? && zip_code.present? && locality.present?
+			[street, zip_code, locality].compact.join(', ')
+		end
 	end
 
 	def product_publishing_remaining?
@@ -40,5 +42,19 @@ class Company < ActiveRecord::Base
 
 	def coordinates
 		[latitude, longitude]
+	end
+
+
+
+	def confirmed?
+		confirmation_token.blank?
+	end
+
+	def confirm
+		update_attribute(:confirmation_token, nil)
+	end
+
+	def generate_confirmation_token
+		self.confirmation_token = SecureRandom.urlsafe_base64
 	end
 end

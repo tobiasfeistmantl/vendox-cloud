@@ -17,7 +17,7 @@ class Api::V2::Base < Api::Base
 
 	def authenticate_with_token!
 		if request.authorization && session_token = token_and_options(request)[0]
-			unless Devise.secure_compare(@user_session.token, session_token)
+			unless ActiveSupport::SecurityUtils.secure_compare(@user_session.token, session_token)
 				render json: {
 					error: {
 						type: "INVALID_USER_SESSION_TOKEN_COMBINATION"

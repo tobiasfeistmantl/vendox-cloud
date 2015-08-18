@@ -14,7 +14,7 @@ class Api::V1::User::Base < Api::V1::Base
 
 	def authenticate_with_token
 		if request.authorization && session_token = token_and_options(request)[0]
-			unless Devise.secure_compare(@user_session.token, session_token)
+			unless ActiveSupport::SecurityUtils.secure_compare(@user_session.token, session_token)
 				render json: { errors: [ "Invalid session token" ] }, status: 403
 				return
 			end

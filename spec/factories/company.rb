@@ -1,16 +1,18 @@
-Geocoder.configure(lookup: :test)
+if Rails.env.test?
+	Geocoder.configure(lookup: :test)
 
-Geocoder::Lookup::Test.add_stub(
-	"Fiecht-Au 31, 6134, Vomp", [
-		{
-			'latitude'     => 47.358423,
-			'longitude'    => 11.703437,
-			'address'      => 'Fiecht-Au 31, 6134, Vomp',
-			'country'      => 'Austria',
-			'country_code' => 'AT'
-		}
-	]
-)
+	Geocoder::Lookup::Test.add_stub(
+		"Fiecht-Au 31, 6134, Vomp", [
+			{
+				'latitude'     => 47.358423,
+				'longitude'    => 11.703437,
+				'address'      => 'Fiecht-Au 31, 6134, Vomp',
+				'country'      => 'Austria',
+				'country_code' => 'AT'
+			}
+		]
+	)
+end
 
 FactoryGirl.define do
 	factory :company do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818120602) do
+ActiveRecord::Schema.define(version: 20150818181514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150818120602) do
     t.string   "slug"
     t.integer  "remaining_products",        default: 10
     t.string   "vat_number"
+    t.string   "confirmation_token"
   end
 
   add_index "companies", ["email"], name: "index_companies_on_email", unique: true, using: :btree

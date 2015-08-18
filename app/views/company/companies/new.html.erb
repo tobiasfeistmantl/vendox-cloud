@@ -1,0 +1,56 @@
+<%= simple_form_for @company do |f| %>
+
+	<div class="col-md-offset-3 col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<%= t('new_model', model: Company.model_name.human) %>
+				</h3>
+			</div>
+			<div class="panel-body">
+				<%= f.input :name %>
+				<%= f.input :email %>
+				<%= f.input :password %>
+				<%= f.input :password_confirmation, required: true %>
+				<%= f.input :phone_number %>
+				<%= f.input :vat_number %>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-offset-3 col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<%= t('location_of_your_shop') %>
+				</h3>
+			</div>
+			<div class="panel-body">
+				<%= f.input :street %>
+				<%= f.input :zip_code %>
+				<%= f.input :locality %>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-offset-3 col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<%= t('register') %>
+				</h3>
+			</div>
+			<div class="panel-body text-center">
+				<%= recaptcha_tags %>
+
+				<%= f.submit class: "btn btn-primary btn-sign-up" %>
+
+				<div class="already-registered-wrapper">
+					<strong><%= t('already_registered') %></strong><br>
+					<%= link_to t('sign_in'), new_company_session_path %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<% end %>

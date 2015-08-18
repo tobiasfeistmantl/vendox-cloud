@@ -19,6 +19,7 @@ end
 
 gem 'rails', '4.2.2'
 gem 'pg'
+gem 'bcrypt'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'

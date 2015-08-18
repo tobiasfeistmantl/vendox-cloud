@@ -1,3 +1,17 @@
 // Place all the styles related to the Company::Companies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn-sign-up {
+	margin: 15px auto;
+}
+
+.g-recaptcha {
+	div {
+		margin: 0 auto;
+	}
+}
+
+.already-registered-wrapper {
+	margin-top: 15px;
+}

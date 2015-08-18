@@ -12,7 +12,7 @@ $border-radius-base: 2px;
 $font-family-sans-serif: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headings-font-weight: 300;
 
-@import "*";
+@import "**/*";
 @import "shared/*";
 @import "bootstrap-sprockets";
 @import "bootstrap";

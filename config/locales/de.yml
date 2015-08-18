@@ -11,6 +11,10 @@ de:
     unable_to_save: Speichern nicht möglich
     not_in_shop: Nicht in dem Geschäft!
     validation_of_recatcha_failed: Validierung des reCaptchas fehlgeschlagen
+    sign_up_successful: Die Registrierung war erfolgreich. Bitte überprüfe dein E-Mail Account auf eine Bestätigungsmail.
+    invalid_confirmation_token: Ungültiger Bestätigungstoken!
+    account_confirmed: Benutzer bestätigt. Du kannst dich nun anmelden!
+    account_already_confirmed: Benutzer bereits bestätigt. Du kannst dich anmelden!
   edit: Bearbeiten
   edit_model: "%{model} bearbeiten"
   delete: Löschen
