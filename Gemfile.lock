@@ -45,7 +45,6 @@ GEM
     autoprefixer-rails (5.2.1)
       execjs
       json
-    bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.5.1)
@@ -68,13 +67,6 @@ GEM
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
     debug_inspector (0.0.2)
-    devise (3.5.1)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      responders
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     dotenv (2.0.2)
     dotenv-rails (2.0.2)
@@ -85,6 +77,9 @@ GEM
     execjs (2.5.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.31.0)
@@ -219,7 +214,6 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     nori (2.6.0)
-    orm_adapter (0.5.0)
     pg (0.18.2)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
@@ -266,8 +260,6 @@ GEM
       polyamorous (~> 1.2)
     rdoc (4.2.0)
     recaptcha (0.4.0)
-    responders (2.1.0)
-      railties (>= 4.2.0, < 5)
     rspec-core (3.3.2)
       rspec-support (~> 3.3.0)
     rspec-expectations (3.3.1)
@@ -328,8 +320,6 @@ GEM
       addressable
     valvat (0.6.10)
       savon (>= 2.3.0)
-    warden (1.2.3)
-      rack (>= 1.0)
     wasabi (3.5.0)
       httpi (~> 2.0)
       nokogiri (>= 1.4.2)
@@ -350,9 +340,8 @@ DEPENDENCIES
   byebug
   carrierwave
   coffee-rails
-  devise
   dotenv-rails
-  factory_girl
+  factory_girl_rails
   fog
   friendly_id
   geocoder

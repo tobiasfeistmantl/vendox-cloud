@@ -9,7 +9,7 @@ group :development, :test do
 	gem 'spring'
 	gem 'dotenv-rails'
 	gem 'rspec-rails'
-	gem 'factory_girl'
+	gem 'factory_girl_rails'
 end
 
 group :production do
@@ -26,7 +26,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'devise'
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'geocoder'

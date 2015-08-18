@@ -1,11 +1,9 @@
 class Company < ActiveRecord::Base
 	include ActiveModel::Validations
 
-	# Include default devise modules. Others available are:
-	# :lockable, :timeoutable and :omniauthable
-	devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :confirmable, :registerable
+	has_secure_password
 
-	validates_presence_of [:name, :email, :street, :zip_code, :locality, :vat_number, :longitude, :latitude, :phone_number]
+	validates_presence_of [:name, :email, :password, :street, :zip_code, :locality, :vat_number, :longitude, :latitude, :phone_number]
 	validates_uniqueness_of [:name, :email, :phone_number, :slug, :vat_number]
 	
 	validates :vat_number, valvat: { lookup: true }
