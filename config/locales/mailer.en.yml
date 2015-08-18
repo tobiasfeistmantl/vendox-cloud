@@ -1,0 +1,4 @@
+en:
+  mailer:
+    subjects:
+      confirmation_mail: Confirmation mail for your account

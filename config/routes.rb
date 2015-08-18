@@ -12,11 +12,12 @@ Rails.application.routes.draw do
 		
 		resources :companies, only: [:new, :create, :show], module: :company do
 			resources :products
-			get "confirm/:confirmation_token" => "companies#confirm"
+			get "confirm/:confirmation_token" => "companies#confirm", as: :confirm
 		end
 
 		namespace :company, path: :companies do
-			resources :sessions, only: [:new, :create, :destroy]
+			resources :sessions, only: [:new, :create]
+			delete "sessions" => "sessions#destroy"
 		end
 
 		get ':id' => 'company/companies#show'

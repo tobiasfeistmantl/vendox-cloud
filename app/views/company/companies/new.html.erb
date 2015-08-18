@@ -43,11 +43,11 @@
 			<div class="panel-body text-center">
 				<%= recaptcha_tags %>
 
-				<%= f.submit class: "btn btn-primary btn-sign-up" %>
+				<%= f.submit class: "btn btn-primary btn-sign-in-up" %>
 
-				<div class="already-registered-wrapper">
+				<div class="register-sign-in-wrapper">
 					<strong><%= t('already_registered') %></strong><br>
-					<%= link_to t('sign_in'), new_company_session_path %>
+					<%= link_to t('login'), new_company_session_path %>
 				</div>
 			</div>
 		</div>

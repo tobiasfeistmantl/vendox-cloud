@@ -15,6 +15,11 @@ de:
     invalid_confirmation_token: Ungültiger Bestätigungstoken!
     account_confirmed: Benutzer bestätigt. Du kannst dich nun anmelden!
     account_already_confirmed: Benutzer bereits bestätigt. Du kannst dich anmelden!
+    signed_in: Erfolgreich angemeldet!
+    account_not_confirmed: Dein Benutzer wurde noch nicht bestätigt!
+    invalid_credentials: Anmeldedaten sind ungültig!
+    logged_out: Du wurdest erfolgreich abgemeldet!
+    still_logged_in: Du bist immer noch angemeldet!
   edit: Bearbeiten
   edit_model: "%{model} bearbeiten"
   delete: Löschen
@@ -80,3 +85,5 @@ de:
   price_on_request: Preis auf Nachfrage
   learn_more: Mehr erfahren
   product_by: "Ein Produkt von %{company}"
+  remember_me: Angemeldet bleiben
+  not_on_vendox: Nicht auf Vendox?

@@ -15,6 +15,11 @@ en:
     invalid_confirmation_token: Invalid confirmation token!
     account_confirmed: Account confirmed. You are now able to sign in into your account!
     account_already_confirmed: Account already confirmed. You should be able to sign in into your account!
+    signed_in: Successfully signed in!
+    account_not_confirmed: Account is not confirmed yet!
+    invalid_credentials: Credentials are invalid!
+    logged_out: You are logged out successfully!
+    still_logged_in: You are still logged in!
   edit: Edit
   edit_model: "Edit %{model}"
   delete: Delete
@@ -80,3 +85,5 @@ en:
   price_on_request: Price on request
   learn_more: Learn more
   product_by: "This is a product by %{company}"
+  remember_me: Remember me
+  not_on_vendox: Not on Vendox?

@@ -1,0 +1,7 @@
+Welcome on Vendox!
+
+To confirm your account, please click onto the link below:
+
+<%= company_confirm_url(company_id: @company.id, confirmation_token: @company.confirmation_token, locale: :en) %>
+
+Once your account is confirmed, you are able to sign in and manage your products.

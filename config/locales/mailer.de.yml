@@ -1,0 +1,4 @@
+de:
+  mailer:
+    subjects:
+      confirmation_mail: Bestätigungsmail für deinen Benutzer

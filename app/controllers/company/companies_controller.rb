@@ -18,6 +18,8 @@ class Company::CompaniesController < Company::Base
 		@company.generate_confirmation_token
 
 		if @company.save
+			CompanyMailer.confirmation_mail(@company).deliver_now
+
 			flash[:success] = t('messages.sign_up_successful')
 			redirect_to root_path
 		else

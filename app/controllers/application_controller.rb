@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 	include LocationsHelper
 	include UserHelper
 	include Api::V1::User::SessionsHelper
+	include Company::SessionsHelper
 
 	before_action :set_locale
 
