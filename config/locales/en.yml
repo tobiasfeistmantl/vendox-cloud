@@ -58,16 +58,10 @@ en:
   order: Order
   companies_who_presenting: Companies who are presenting their products
   renew_location: Renew location
-  not_listed: Not listed?
-  than_contact_us_on: Than contact us on
-  and_we_will_create_an_account: and we will create an account for you!
-  currently_free_box:
-    important_currently_free: Important! Currently free!
-    young_company: We currently building up our stocklist!
-    free: "Don't miss the chance to add your products to vendox for free!"
-    register: Basicly register as a business
-    start_selling: and start selling!
-    here: here
+  not_listed:
+    title: Not listed?
+    send_us_an_email: Than please send an email to
+    and_we_will_contact_you: and we will contact you.
   description: Description
   remaining_products_for_publishing: Remaining products for publishing
   private_information: Private information

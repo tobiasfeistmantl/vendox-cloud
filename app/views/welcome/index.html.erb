@@ -22,45 +22,14 @@
 		<div class="fb-like" data-href="https://www.facebook.com/vendoxfinder" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 	</div>
 
-	<div class="col-md-offset-2 col-md-8">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">
-					<%= t('currently_free_box.important_currently_free') %>
-				</h3>
-			</div>
-
-			<div class="panel-body">
-				<p>
-					<%= t('currently_free_box.young_company') %>
-				</p>
-				<p>
-					<%= t('currently_free_box.free') %>
-				</p>
-
-				<p>
-					<%= t('currently_free_box.register') %><br>
-					<strong>
-						<%= link_to t('currently_free_box.here'), new_company_path %>
-					</strong><br>
-					<%= t('currently_free_box.start_selling') %>
-				</p>
-
-				<p>
-					<strong><%= t('already_registered') %></strong><br>
-					<%= link_to t('login'), new_company_session_path %>
-				</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-md-12">
-		<h2><%= t('not_listed') %></h2>
+	<div class="col-md-12 not-listed-wrapper">
+		<h2><%= t('not_listed.title') %></h2>
 		<h3>
-			<p><%= t('currently_free_box.register') %></p>
-			<p><%= link_to t('currently_free_box.here'), new_company_path %></p>
-			<p><%= t('currently_free_box.start_selling') %></p>
+			<%= t('not_listed.send_us_an_email') %>
+			<br>
+			<%= link_to "incorporate@vendox.net", "mailto:incorporate@vendox.net" %>
+			<br>
+			<%= t('not_listed.and_we_will_contact_you') %>
 		</h3>
-
 	</div>
 </div>
