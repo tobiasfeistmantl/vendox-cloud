@@ -1,0 +1,16 @@
+<div class="col-md-offset-3 col-md-6">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				<%= t('new_model', model: t('password')) %>
+			</h3>
+		</div>
+		<div class="panel-body">
+			<%= simple_form_for @company, url: company_password_url(@company, @company.password_reset_token) do |f| %>
+				<%= f.input :password %>
+				<%= f.input :password_confirmation %>
+				<%= f.submit "Update Password", class: "btn btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+</div>

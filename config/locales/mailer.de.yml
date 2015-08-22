@@ -2,3 +2,4 @@ de:
   mailer:
     subjects:
       confirmation_mail: Bestätigungsmail für deinen Benutzer
+      password_reset_mail: Passwort zurücksetzen

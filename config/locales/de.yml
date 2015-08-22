@@ -1,6 +1,7 @@
 de:
   messages:
     not_found: "%{model} nicht gefunden"
+    generic_error: "Fehler!"
     created: "%{model} erstellt"
     updated: "%{model} aktualisiert"
     thank_you_for_your_feedback: Vielen Dank für dein Feedback
@@ -20,6 +21,7 @@ de:
     invalid_credentials: Anmeldedaten sind ungültig!
     logged_out: Du wurdest erfolgreich abgemeldet!
     still_logged_in: Du bist immer noch angemeldet!
+    password_reset_link_send: Wir haben dir einen Zurücksetzungslink gesendet. Bitte überprüfe dein E-Mail Account.
   edit: Bearbeiten
   edit_model: "%{model} bearbeiten"
   delete: Löschen
@@ -81,3 +83,5 @@ de:
   product_by: "Ein Produkt von %{company}"
   remember_me: Angemeldet bleiben
   not_on_vendox: Nicht auf Vendox?
+  password: Passwort
+  reset_password: Passwort zurücksetzen

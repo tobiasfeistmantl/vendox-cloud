@@ -57,4 +57,8 @@ class Company < ActiveRecord::Base
 	def generate_confirmation_token
 		self.confirmation_token = SecureRandom.urlsafe_base64
 	end
+
+	def generate_password_reset_token
+		self.password_reset_token = SecureRandom.urlsafe_base64
+	end
 end

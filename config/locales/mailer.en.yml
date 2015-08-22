@@ -2,3 +2,4 @@ en:
   mailer:
     subjects:
       confirmation_mail: Confirmation mail for your account
+      password_reset_mail: Reset your password

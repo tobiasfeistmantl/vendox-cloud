@@ -13,11 +13,14 @@ Rails.application.routes.draw do
 		resources :companies, only: [:new, :create, :show], module: :company do
 			resources :products
 			get "confirm/:confirmation_token" => "companies#confirm", as: :confirm
+			resources :password, only: [:update, :edit], controller: :password_reset, param: :reset_token
 		end
 
 		namespace :company, path: :companies do
 			resources :sessions, only: [:new, :create]
 			delete "sessions" => "sessions#destroy"
+			resources :password, only: [:new], controller: :password_reset
+			post 'password' => "password_reset#create", as: :password_reset_create
 		end
 
 		get ':id' => 'company/companies#show'

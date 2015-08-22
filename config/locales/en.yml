@@ -1,6 +1,7 @@
 en:
   messages:
     not_found: "%{model} not found"
+    generic_error: "Error!"
     created: "%{model} created"
     updated: "%{model} updated"
     thank_you_for_your_feedback: Thank you for your feedback
@@ -20,6 +21,7 @@ en:
     invalid_credentials: Credentials are invalid!
     logged_out: You are logged out successfully!
     still_logged_in: You are still logged in!
+    password_reset_link_send: We've send you an password reset link. Please check your mailbox.
   edit: Edit
   edit_model: "Edit %{model}"
   delete: Delete
@@ -81,3 +83,5 @@ en:
   product_by: "This is a product by %{company}"
   remember_me: Remember me
   not_on_vendox: Not on Vendox?
+  password: Password
+  reset_password: Reset password
