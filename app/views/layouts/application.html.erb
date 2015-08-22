@@ -39,7 +39,7 @@ $(function() {
 		var path = "/api/v2/users/sessions"
 
 		var data = {
-			"device": navigator.userAgent
+			"session[device]": navigator.userAgent
 		}
 
 		$.ajax({
