@@ -18,6 +18,8 @@ setPosition = (position) ->
 
 	latLng = new google.maps.LatLng latitude, longitude
 
+	$locationField = $('#input-location')
+
 	geocoder.geocode { location: latLng }, (results, status) ->
 		address = results[0].formatted_address
 
@@ -46,5 +48,5 @@ setPosition = (position) ->
 				$('#user-address').html user_address
 				$('.current-location-wrapper').fadeIn()
 
-				if $('.current-location-field').length
-					$('.current-location-field').val(address)
+				if $locationField.length
+					$locationField.val(address)

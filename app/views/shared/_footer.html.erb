@@ -1,5 +1,5 @@
 <div class="col-md-12 footer text-center">
-	<div class="current-location-wrapper">
+	<div class="wrapper-location">
 		<span class="current-location-info">
 			<%= t('your_current_location_is') %>
 			<strong>
@@ -7,7 +7,7 @@
 					<%= user_address if user_address %>
 				</span>
 			</strong>
-			| <%= link_to t('renew_location'), "#", class: 'user-location-renew-button' %>
+			| <%= link_to t('renew_location'), "#", class: 'lnk-location-renew' %>
 		</span>
 	</div>
 

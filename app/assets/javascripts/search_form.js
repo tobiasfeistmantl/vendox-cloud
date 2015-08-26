@@ -1,13 +1,24 @@
 $(function() {
-	populatedLocation = $('.current-location-field').val();
-	$form = $('#product_search');
+	var $locationFormGroup = $('#form-group-location');
+	var $errorBlock = $('#block-error');
 
-	$('#q_name_or_description_or_company_name_cont').on('input', function() {
-		$('.search-button').prop('value', "<%= t('search_for_something') %>");
+	var $searchForm = $('#form-product-search');
+	var $searchConditionField = $('#input-search-condition');
+	var $locationField = $('#input-location');
+	var $locationRenewButton = $('#btn-location-renew');
+	var $searchButton = $('#btn-search');
+
+	var $latitudeField = $('#input-latitude');
+	var $longitudeField = $('#input-longitude');
+
+	var populatedLocation = $locationField.val();
+
+	$searchConditionField.on('input', function() {
+		$searchButton.prop('value', "<%= t('search_for_something') %>");
 	})
 
-	$form.submit(function(e) {
-		var address = $('.current-location-field').val();
+	$searchForm.submit(function(e) {
+		var address = $locationField.val();
 
 		if (address !== populatedLocation) {
 			e.preventDefault();
@@ -16,16 +27,16 @@ $(function() {
 
 			geocoder.geocode({ 'address': address }, function(results, status) {
 				if (status === google.maps.GeocoderStatus.OK) {
-					$('#longitude-field').val(results[0].geometry.location.lng());
-					$('#latitude-field').val(results[0].geometry.location.lat());
-					$('.current-location-field').val(results[0].formatted_address);
+					$latitudeField.val(results[0].geometry.location.lat());
+					$longitudeField.val(results[0].geometry.location.lng());
+					$locationField.val(results[0].formatted_address);
 
-					$form.off('submit');
-					$form.submit();
+					$searchForm.off('submit');
+					$searchForm.submit();
 				} else if (status === google.maps.GeocoderStatus.ZERO_RESULTS) {
-					$('.current-location-field').val(populatedLocation);
-					$('.location-form-group').addClass('has-error');
-					$('#helpBlock').slideDown();
+					$locationField.val(populatedLocation);
+					$locationFormGroup.addClass('has-error');
+					$errorBlock.slideDown();
 				}
 			});
 		} else {

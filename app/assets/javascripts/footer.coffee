@@ -1,3 +1,5 @@
 $ ->
-	$('.user-location-renew-button').click ->
+	$locationRenewLink = $('.lnk-location-renew')
+
+	$locationRenewLink.click ->
 		autoLocation()
