@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
@@ -19,4 +20,6 @@
 //= require gmaps/google
 //= require js.cookie
 //= require facebook
-//= require_tree .
+//= require variables
+//= require_tree ./lib
+//= require_tree ./application

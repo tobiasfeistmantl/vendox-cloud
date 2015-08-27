@@ -4,16 +4,13 @@
 			<%= f.input :name_or_description_or_company_name_cont, label: false, input_html: { id: 'input-search-condition' } %>
 			<div class="form-group form-group-location">
 				<div class="input-group">
-					<%= text_field_tag :location, user_address, placeholder: t('location_were_you_are'), class: 'form-control', id: 'input-location' %>
+					<%= text_field_tag :location, nil, placeholder: t('location_were_you_are'), class: 'form-control', id: 'input-location' %>
 					<%= link_to "#", class: 'user-location-renew-button input-group-addon', id: "btn-location-renew" do %>
 						<span class="glyphicon glyphicon-refresh"></span>
 					<% end %>
 				</div>
 				<span id="block-error" class="help-block"><%= t('address_not_valid') %></span>
 			</div>
-
-			<%= hidden_field_tag :lat, "", id: 'input-latitude' %>
-			<%= hidden_field_tag :lng, "", id: 'input-longitude' %>
 
 			<%= f.button :submit, t('show_all'), id: 'btn-search' %>
 		<% end %>

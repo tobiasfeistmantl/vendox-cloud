@@ -24,6 +24,7 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -42,3 +43,4 @@ gem "mini_magick"
 gem 'friendly_id'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'valvat'
+gem 'gon'
