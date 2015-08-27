@@ -1,0 +1,44 @@
+.grid-product {
+	margin: 0 auto;
+	width: 100%;
+
+	.grid-item-product {
+		background-color: #fff;
+		margin: 10px;
+		padding: 10px;
+		width: 350px;
+		border: solid 1px #e7e7e7;
+		box-shadow: 0 2px 2px #BDBDBD;
+		border-radius: 4px;
+		color: #424242;
+
+		.wrapper-grid-item-header {
+			img {
+				width: 100%;
+			}
+
+			.wrapper-distance {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				color: #fff;
+				background: rgba(17, 17, 17, .6);
+				font-size: 12px;
+				padding: 7px 15px;
+			}
+		}
+
+		.wrapper-grid-item-body {
+			text-align: center;
+			padding-top: 15px;
+
+			h3 {
+				margin: 0;
+			}
+
+			h4 {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

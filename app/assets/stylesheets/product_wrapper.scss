@@ -1,0 +1,19 @@
+.wrapper-product {
+	background-color: #fff;
+	padding: 10px 0;
+	border: solid 1px #e7e7e7;
+	margin-bottom: 5px;
+	border-radius: 3px;
+	box-shadow: 0 1px #e7e7e7;
+
+	.media-left {
+		img {
+			max-height: 250px;
+			width: 120px;
+		}
+	}
+}
+
+.wrapper-product-inactive {
+	opacity: .5;
+}

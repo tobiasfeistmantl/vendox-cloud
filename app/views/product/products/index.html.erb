@@ -1,9 +1,41 @@
-<div class="col-md-3">
-	<%= render 'search_form' %>
-</div>
-<div class="col-md-9">
-	<% @products.each do |product| %>
-		<%= render 'wrapper', product: product, distance: true %>
+<div class="col-md-12">
+	<% if @products.empty? %>
+		<%= t('currently_no_products_available') %>
+	<% else %>
+		<div class="grid-product">
+			<% @products.each do |product| %>
+				<%= link_to [product.company, product] do %>
+					<div class="grid-item-product">
+						<div class="wrapper-grid-item-header">
+							<%= image_tag product.product_picture.grid, alt: product.name %>
+
+							<% if current_user_session && current_user_session.position %>
+								<div class="wrapper-distance">
+									<%= product.distance.round(2) %>km
+								</div>
+							<% end %>
+						</div>
+
+
+						<div class="wrapper-grid-item-body">
+							<h3>
+								<%= product.name %>
+							</h3>
+							<h4>
+								<% unless product.price_on_request %>
+									<%= number_to_currency product.price %>
+								<% else %>
+									<%= t 'price_on_request' %>
+								<% end %>
+							</h4>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+		<%# @products.each do |product| %>
+			<%#= render 'wrapper', product: product, distance: true %>
+		<%# end %>
 	<% end %>
 	<%= will_paginate @products, renderer: BootstrapPagination::Rails %>
 </div>
