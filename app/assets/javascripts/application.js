@@ -21,6 +21,7 @@
 //= require js.cookie
 //= require facebook
 //= require masonry
+//= require images_loaded
 //= require variables
 //= require_tree ./lib
 //= require_tree ./application
