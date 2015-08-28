@@ -1,6 +1,20 @@
+<% if current_user_session && current_user_session.position && @products.present? && @products.first.distance > 50 %>
+	<div class="wrapper-no-products-nearby text-center">
+		<h2>
+			<%= t('no_products_nearby_available') %>
+		</h2>
+
+		<span class="span-products-still-listed"><%= t('but_here_are_still_the_products_you_searched_for') %></span>
+	</div>
+<% end %>
+
 <div class="col-md-12">
 	<% if @products.empty? %>
-		<%= t('currently_no_products_available') %>
+		<div class="wrapper-no-products-nearby text-center">
+			<h2>
+				<%= t('currently_no_products_available') %>
+			</h2>
+		</div>
 	<% else %>
 		<div class="grid-product">
 			<% @products.each do |product| %>
